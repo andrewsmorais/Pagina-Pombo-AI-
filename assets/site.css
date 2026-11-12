@@ -273,3 +273,39 @@ footer { border-top: 1px solid var(--linha); padding-block: var(--e9) var(--e6);
   details { padding: var(--e4) var(--e5); }
   .rodape { grid-template-columns: 1fr; }
 }
+
+/* ---------- páginas de texto legal ---------- */
+.legal { padding-block: var(--e9) var(--e10); }
+.legal .faixa { max-width: 760px; }
+.legal h1 { font-size: clamp(2rem, 4.2vw, 2.8rem); }
+.legal .atualizado { color: var(--tinta-2); font-size: .9rem; margin-top: var(--e4); }
+.legal h2 {
+  font-size: 1.35rem; text-align: left;
+  margin-top: var(--e8); margin-bottom: var(--e4);
+  padding-top: var(--e5); border-top: 1px solid var(--linha);
+}
+.legal h3 { font-size: 1.02rem; margin-top: var(--e5); margin-bottom: var(--e2); }
+.legal p { margin-bottom: var(--e4); }
+.legal ul { margin: 0 0 var(--e4) var(--e5); display: grid; gap: var(--e2); }
+.legal li { padding-left: var(--e1); }
+.legal a { color: var(--verde); text-decoration: underline; text-underline-offset: 3px; }
+.legal strong { font-weight: 600; }
+.legal .aviso {
+  background: var(--verde-claro); border-left: 3px solid var(--verde);
+  border-radius: 0 var(--raio) var(--raio) 0;
+  padding: var(--e5); margin-block: var(--e5);
+}
+.legal .aviso p:last-child { margin-bottom: 0; }
+.legal .indice {
+  background: var(--papel-2); border: 1px solid var(--linha);
+  border-radius: var(--raio); padding: var(--e5) var(--e6); margin-top: var(--e7);
+}
+.legal .indice h2 { font-size: 1rem; margin: 0 0 var(--e3); padding: 0; border: 0; }
+.legal .indice ul { margin: 0; list-style: none; gap: var(--e2); }
+.legal .indice a { color: var(--tinta-2); text-decoration: none; }
+.legal .indice a:hover { color: var(--verde); text-decoration: underline; }
+.legal table { width: 100%; border-collapse: collapse; margin-bottom: var(--e5); font-size: .94rem; }
+.legal th, .legal td { text-align: left; padding: var(--e3); border-bottom: 1px solid var(--linha); vertical-align: top; }
+.legal th { font-weight: 600; }
+.legal .voltar { display: block; margin-top: var(--e8); color: var(--tinta-2); font-size: .92rem; text-decoration: none; }
+.legal .voltar:hover { color: var(--verde); }

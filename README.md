@@ -8,6 +8,10 @@ Site institucional (landing page) do aplicativo **Pombo AI** — app de nutriç�
 |---|---|
 | `index.html` | A página inicial |
 | `imprensa.html` | Página de imprensa e sugestões, com o formulário de contato |
+| `politica-de-privacidade.html` | Política de privacidade, escrita a partir do que o app realmente coleta |
+| `termos-de-uso.html` | Termos de uso |
+| `politica-de-reembolso.html` | Como cancelar e pedir reembolso na App Store e na Google Play |
+| `politica-de-cookies.html` | Política de cookies do site e do aplicativo |
 | `assets/site.css` | Todo o visual do site (cores, tipografia, espaçamentos) |
 | `assets/pombo-icon.png` | Logo do Pombo AI, usada no topo, no rodapé e nas redes sociais |
 | `assets/favicon.png` | Ícone que aparece na aba do navegador |
@@ -39,7 +43,8 @@ Antes de colocar no ar, troque estes marcadores:
 - Links da App Store e do Google Play (os `href` estão como `#`)
 - Usuários do Instagram e do TikTok (`SEU_USUARIO`)
 - Prints das telas do app (os retângulos marcados como `[Print do app ...]`), inclusive os três da seção de temas: um no modo claro, um no escuro e um no azul
-- Depoimentos reais de usuários, com autorização de quem escreveu
+- **CNPJ, endereço e encarregado de dados da Dandtecno** — procure por `[PREENCHER` nas páginas legais
+- Depoimentos reais de usuários, com autorização de quem escreveu. A seção está comentada no `index.html`, com as instruções dentro
 - Destino do formulário de imprensa (o `action` está como `#`)
 - E-mail de contato, nas perguntas frequentes
 
