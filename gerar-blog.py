@@ -327,7 +327,7 @@ for a in A:
     extra='<script type="application/ld+json">'+json.dumps(ld,ensure_ascii=False)+'</script>'
     faq="".join(f"<h3>{html.escape(q)}</h3><p>{html.escape(r)}</p>" for q,r in a["faq"])
     fu=("<h2>Fuentes</h2><ul>"+"".join(f'<li><a href="{u}" rel="noopener" target="_blank">{html.escape(t)}</a></li>' for t,u in a["fuentes"])+"</ul>") if a["fuentes"] else ""
-    rel="".join(f'<li><a href="/blog/{b["slug"]}.html">{html.escape(b["title"])}</a></li>' for b in A if b is not a)
+    rel="".join(f'<li><a href="{b["slug"]}.html">{html.escape(b["title"])}</a></li>' for b in A if b is not a)
     doc=HEAD(a["title"]+" | Pombo AI",a["desc"],url,extra)+f"""
 <main id="conteudo" class="legal articulo"><div class="faixa">
 <p class="migas"><a href="/">Inicio</a> › <a href="/blog/">Blog</a> › {a['cat']}</p>
@@ -344,7 +344,7 @@ for a in A:
 """+FOOT
     open(f"{ROOT}/blog/{a['slug']}.html","w").write(doc)
 
-cards="".join(f'<li class="tarjeta-blog"><span class="cat">{a["cat"]}</span><h2><a href="/blog/{a["slug"]}.html">{html.escape(a["title"])}</a></h2><p>{html.escape(a["desc"])}</p><span class="meta">{a["mins"]} min de lectura</span></li>' for a in A)
+cards="".join(f'<li class="tarjeta-blog"><span class="cat">{a["cat"]}</span><h2><a href="{a["slug"]}.html">{html.escape(a["title"])}</a></h2><p>{html.escape(a["desc"])}</p><span class="meta">{a["mins"]} min de lectura</span></li>' for a in A)
 ld={"@context":"https://schema.org","@type":"Blog","name":"Blog de Pombo AI","description":"Artículos sobre alimentación, ayuno, hidratación y recetas saludables.","inLanguage":"es-ES","url":DOM+"/blog/"}
 idx=HEAD("Blog de nutrición, ayuno, hidratación y recetas | Pombo AI","Artículos claros y con fuentes sobre ayuno intermitente, hidratación en el ejercicio y recetas para adelgazar o ganar masa muscular.",DOM+"/blog/",'<script type="application/ld+json">'+json.dumps(ld,ensure_ascii=False)+'</script>').replace('og:type" content="article"','og:type" content="website"')+f"""
 <main id="conteudo" class="blog-indice"><div class="faixa">
