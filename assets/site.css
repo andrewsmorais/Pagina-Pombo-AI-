@@ -309,3 +309,20 @@ footer { border-top: 1px solid var(--linha); padding-block: var(--e9) var(--e6);
 .legal th { font-weight: 600; }
 .legal .voltar { display: block; margin-top: var(--e8); color: var(--tinta-2); font-size: .92rem; text-decoration: none; }
 .legal .voltar:hover { color: var(--verde); }
+
+/* Blog */
+.articulo .migas { font-size: .85rem; color: var(--tinta-2); margin-bottom: var(--e4); }
+.articulo .migas a { color: var(--tinta-2); text-decoration: none; }
+.articulo .entradilla { font-size: 1.18rem; line-height: 1.6; color: var(--tinta-2); }
+.articulo table { display: table; }
+.articulo .cta a { font-weight: 700; }
+.blog-indice { padding-block: var(--e9) var(--e10); }
+.blog-indice h1 { text-align: center; font-size: clamp(2.1rem, 4.4vw, 3rem); }
+.blog-indice .guia { text-align: center; margin-inline: auto; max-width: 52ch; }
+.rejilla-blog { list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: var(--e6); margin-top: var(--e9); }
+.tarjeta-blog { background: var(--papel-2); border: 1px solid var(--linha); border-radius: var(--raio); padding: var(--e6); display: grid; gap: var(--e3); align-content: start; }
+.tarjeta-blog h2 { font-size: 1.25rem; text-align: left; margin: 0; }
+.tarjeta-blog h2 a { color: var(--tinta); text-decoration: none; }
+.tarjeta-blog h2 a:hover { color: var(--verde); }
+.tarjeta-blog .cat { font-size: .75rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--verde); }
+.tarjeta-blog .meta { font-size: .85rem; color: var(--tinta-2); }
