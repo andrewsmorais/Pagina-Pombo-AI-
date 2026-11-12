@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR" data-theme="claro">
+<html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,14 +25,6 @@
     --bg: #fbfaf6; --fg: #111; --muted: #5b5b5b; --card: #ffffff;
     --border: #e4e2da; --accent: #1f7a4d; --btn-bg: #111; --btn-fg: #fff;
   }
-  [data-theme="escuro"] {
-    --bg: #0f1113; --fg: #f4f4f2; --muted: #a6a6a0; --card: #1a1d20;
-    --border: #2a2e33; --accent: #4fd08b; --btn-bg: #f4f4f2; --btn-fg: #111;
-  }
-  [data-theme="azul"] {
-    --bg: #0b1a33; --fg: #eaf2ff; --muted: #9db4d6; --card: #12284a;
-    --border: #1f3a64; --accent: #5ab0ff; --btn-bg: #5ab0ff; --btn-fg: #0b1a33;
-  }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--fg); line-height: 1.5; display: flex; flex-direction: column; min-height: 100vh; }
   a { color: inherit; text-decoration: none; }
@@ -42,7 +34,6 @@
   .logo { font-weight: 800; font-size: 1.25rem; }
   nav ul { display: flex; gap: 22px; list-style: none; font-size: .95rem; }
   nav a:hover { color: var(--accent); }
-  .theme-toggle { border: 1px solid var(--border); background: var(--card); color: var(--fg); border-radius: 999px; padding: 6px 12px; cursor: pointer; font-size: .85rem; }
   main { flex: 1; padding: 72px 0; }
   h1 { font-size: clamp(2rem, 4.5vw, 2.8rem); line-height: 1.15; text-align: center; letter-spacing: -0.02em; }
   .lead { color: var(--muted); text-align: center; max-width: 560px; margin: 16px auto 40px; }
@@ -70,7 +61,6 @@
         <li><a href="/imprensa.html">Imprensa</a></li>
       </ul>
     </nav>
-    <button class="theme-toggle" id="tema" aria-label="Trocar tema">Modo claro</button>
   </div>
 </header>
 
@@ -101,27 +91,6 @@
     <p class="copy">© 2026 Pombo AI. Todos os direitos reservados.</p>
   </div>
 </footer>
-
-<script>
-  (function () {
-    var temas = ["claro", "escuro", "azul"];
-    var rotulos = { claro: "Modo claro", escuro: "Modo escuro", azul: "Modo azul" };
-    var salvo = null;
-    try { salvo = localStorage.getItem("pombo-tema"); } catch (e) {}
-    var atual = temas.indexOf(salvo) >= 0 ? salvo : "claro";
-    var botao = document.getElementById("tema");
-    function aplicar(t) {
-      document.documentElement.setAttribute("data-theme", t);
-      botao.textContent = rotulos[t];
-      try { localStorage.setItem("pombo-tema", t); } catch (e) {}
-    }
-    aplicar(atual);
-    botao.addEventListener("click", function () {
-      var i = temas.indexOf(document.documentElement.getAttribute("data-theme"));
-      aplicar(temas[(i + 1) % temas.length]);
-    });
-  })();
-</script>
 
 </body>
 </html>
