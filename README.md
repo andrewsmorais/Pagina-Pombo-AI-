@@ -20,14 +20,16 @@ O site é estático, então basta subir a pasta inteira em qualquer hospedagem. 
 
 ## Os selos da App Store e do Google Play
 
-A Apple e o Google **exigem** que se use a arte oficial deles, sem alterar nada. O site já está pronto para receber os dois arquivos; é só baixar e salvar com estes nomes exatos:
+Os dois selos já estão na pasta `assets/`, recortados de uma imagem enviada pelo próprio dono do app, com o fundo das bordas transparente.
 
-| Salvar como | Onde baixar |
+Eles vieram de uma captura de tela pequena, então estão um pouco menos nítidos do que o original. Se quiser a versão perfeita, baixe a arte oficial e substitua os arquivos mantendo os mesmos nomes:
+
+| Substituir | Onde baixar |
 |---|---|
-| `assets/selo-app-store.svg` | Apple — "Download on the App Store", em `developer.apple.com/app-store/marketing/guidelines/` (escolha o idioma português) |
-| `assets/selo-google-play.png` | Google — "Get it on Google Play", em `play.google.com/intl/pt-BR/badges/` |
+| `assets/selo-app-store.png` | Apple, em `developer.apple.com/app-store/marketing/guidelines/` |
+| `assets/selo-google-play.png` | Google, em `play.google.com/intl/pt-BR/badges/` |
 
-Enquanto os arquivos não estiverem lá, o site mostra sozinho um botão preto com o nome da loja, e troca pelo selo oficial automaticamente assim que você adicionar as imagens. Não precisa mexer no código.
+A Apple e o Google pedem que a arte deles seja usada sem alterações de cor, proporção ou texto.
 
 ## O que falta preencher
 
