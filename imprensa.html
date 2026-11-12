@@ -7,10 +7,16 @@
 <meta name="description" content="Fale com a equipe do Pombo AI: pedidos de imprensa, parcerias e sugestões sobre o aplicativo de nutrição com inteligência artificial.">
 <link rel="canonical" href="https://www.SEU-DOMINIO.com.br/imprensa.html">
 <meta name="robots" content="index, follow">
+<link rel="icon" href="assets/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/pombo-icon.png">
 <meta property="og:title" content="Imprensa e sugestões | Pombo AI">
 <meta property="og:description" content="Fale com a equipe do Pombo AI: imprensa, parcerias e sugestões.">
+<meta property="og:image" content="https://www.SEU-DOMINIO.com.br/assets/pombo-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -20,40 +26,51 @@
   "inLanguage": "pt-BR"
 }
 </script>
+<link rel="stylesheet" href="assets/site.css">
 <style>
-  :root {
-    --bg: #fbfaf6; --fg: #111; --muted: #5b5b5b; --card: #ffffff;
-    --border: #e4e2da; --accent: #1f7a4d; --btn-bg: #111; --btn-fg: #fff;
+  .pagina-contato { padding-block: var(--e9) var(--e10); }
+  .pagina-contato h1 { text-align: center; font-size: clamp(2.1rem, 4.4vw, 3rem); }
+  .pagina-contato .guia { margin-inline: auto; text-align: center; max-width: 52ch; }
+  .contato { max-width: 620px; margin: var(--e9) auto 0; display: grid; gap: var(--e5); }
+  .contato label { display: grid; gap: var(--e2); font-size: .92rem; font-weight: 600; }
+  .contato input, .contato textarea {
+    font: inherit; font-weight: 400;
+    padding: var(--e3) var(--e4);
+    border-radius: 10px;
+    border: 1px solid var(--linha);
+    background: var(--papel-2);
+    color: var(--tinta);
+    transition: border-color .18s ease, box-shadow .18s ease;
   }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--fg); line-height: 1.5; display: flex; flex-direction: column; min-height: 100vh; }
-  a { color: inherit; text-decoration: none; }
-  .wrap { max-width: 1100px; margin: 0 auto; padding: 0 20px; width: 100%; }
-  header.top { position: sticky; top: 0; z-index: 10; background: var(--bg); border-bottom: 1px solid var(--border); }
-  header.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 64px; }
-  .logo { font-weight: 800; font-size: 1.25rem; }
-  nav ul { display: flex; gap: 22px; list-style: none; font-size: .95rem; }
-  nav a:hover { color: var(--accent); }
-  main { flex: 1; padding: 72px 0; }
-  h1 { font-size: clamp(2rem, 4.5vw, 2.8rem); line-height: 1.15; text-align: center; letter-spacing: -0.02em; }
-  .lead { color: var(--muted); text-align: center; max-width: 560px; margin: 16px auto 40px; }
-  form.contato { max-width: 620px; margin: 0 auto; display: grid; gap: 14px; }
-  form.contato label { font-size: .9rem; color: var(--muted); display: grid; gap: 6px; }
-  form.contato input, form.contato textarea, form.contato select { font: inherit; padding: 12px; border-radius: 10px; border: 1px solid var(--border); background: var(--card); color: var(--fg); }
-  form.contato textarea { min-height: 160px; resize: vertical; }
-  form.contato button { background: var(--btn-bg); color: var(--btn-fg); border: 0; padding: 14px; border-radius: 10px; font-weight: 700; cursor: pointer; font-size: 1rem; }
-  .voltar { display: block; text-align: center; margin-top: 28px; color: var(--muted); font-size: .9rem; }
-  .voltar:hover { color: var(--accent); }
-  footer { border-top: 1px solid var(--border); padding: 28px 0; }
-  .copy { color: var(--muted); font-size: .85rem; text-align: center; }
-  @media (max-width: 860px) { nav { display: none; } main { padding: 48px 0; } }
+  .contato input::placeholder, .contato textarea::placeholder { color: #686f7a; }
+  .contato input:focus, .contato textarea:focus {
+    outline: none;
+    border-color: var(--verde);
+    box-shadow: 0 0 0 3px var(--verde-claro);
+  }
+  .contato textarea { min-height: 170px; resize: vertical; }
+  .contato button {
+    background: var(--tinta); color: #fff; border: 0;
+    padding: var(--e4); border-radius: 10px;
+    font: inherit; font-weight: 700; font-size: 1rem;
+    cursor: pointer;
+    transition: transform .18s ease, background .18s ease;
+  }
+  .contato button:hover { background: var(--verde); transform: translateY(-1px); }
+  .voltar { display: block; text-align: center; margin-top: var(--e7); color: var(--tinta-2); font-size: .92rem; }
+  .voltar:hover { color: var(--verde); }
 </style>
 </head>
 <body>
 
-<header class="top">
-  <div class="wrap">
-    <a href="/" class="logo" aria-label="Pombo AI, página inicial">Pombo AI</a>
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
+<header class="topo">
+  <div class="faixa">
+    <a href="/" class="marca" aria-label="Pombo AI, página inicial">
+      <img src="assets/pombo-icon.png" alt="" width="36" height="36">
+      <span>Pombo AI</span>
+    </a>
     <nav aria-label="Menu principal">
       <ul>
         <li><a href="/#faq">Perguntas frequentes</a></li>
@@ -64,31 +81,33 @@
   </div>
 </header>
 
-<main>
-  <div class="wrap">
-    <h1>Imprensa e sugestões</h1>
-    <p class="lead">Quer escrever sobre o Pombo AI, propor uma parceria ou mandar uma sugestão para o aplicativo? Escreva para a gente pelo formulário.</p>
+<main id="conteudo">
+  <section class="pagina-contato">
+    <div class="faixa">
+      <h1>Imprensa e sugestões</h1>
+      <p class="guia">Quer escrever sobre o Pombo AI, propor uma parceria ou mandar uma sugestão para o aplicativo? Escreva para a gente pelo formulário.</p>
 
-    <form class="contato" action="#" method="post">
-      <label for="email">E-mail
-        <input id="email" type="email" name="email" required placeholder="seu@email.com" autocomplete="email">
-      </label>
-      <label for="assunto">Assunto
-        <input id="assunto" type="text" name="assunto" required placeholder="Sobre o que você quer falar?">
-      </label>
-      <label for="mensagem">Mensagem
-        <textarea id="mensagem" name="mensagem" required placeholder="Escreva sua mensagem ou sugestão"></textarea>
-      </label>
-      <button type="submit">Enviar</button>
-    </form>
+      <form class="contato" action="#" method="post">
+        <label for="email">E-mail
+          <input id="email" type="email" name="email" required placeholder="seu@email.com" autocomplete="email">
+        </label>
+        <label for="assunto">Assunto
+          <input id="assunto" type="text" name="assunto" required placeholder="Sobre o que você quer falar?">
+        </label>
+        <label for="mensagem">Mensagem
+          <textarea id="mensagem" name="mensagem" required placeholder="Escreva sua mensagem ou sugestão"></textarea>
+        </label>
+        <button type="submit">Enviar</button>
+      </form>
 
-    <a class="voltar" href="/">← Voltar para a página inicial</a>
-  </div>
+      <a class="voltar" href="/">← Voltar para a página inicial</a>
+    </div>
+  </section>
 </main>
 
 <footer>
-  <div class="wrap">
-    <p class="copy">© 2026 Pombo AI. Todos os direitos reservados.</p>
+  <div class="faixa">
+    <p class="direitos" style="margin-top:0;border-top:0;padding-top:0;text-align:center;">© 2026 Pombo AI. Todos os direitos reservados.</p>
   </div>
 </footer>
 
