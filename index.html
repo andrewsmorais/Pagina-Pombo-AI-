@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="claro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pombo AI | Monitore suas calorias apenas com uma foto</title>
+<meta name="description" content="Pombo AI é o aplicativo de nutrição com inteligência artificial que calcula calorias, proteínas, carboidratos e gorduras a partir de uma foto da sua refeição.">
+<link rel="canonical" href="https://www.SEU-DOMINIO.com.br/">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Pombo AI | Monitore suas calorias apenas com uma foto">
+<meta property="og:description" content="Tire uma foto da refeição e veja calorias e macronutrientes em segundos.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Pombo AI",
+  "applicationCategory": "HealthApplication",
+  "operatingSystem": "iOS, Android",
+  "description": "Aplicativo de nutrição com IA que estima calorias e macronutrientes a partir de uma foto.",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "BRL" }
+}
+</script>
+<style>
+  :root {
+    --bg: #fbfaf6; --fg: #111; --muted: #5b5b5b; --card: #ffffff;
+    --border: #e4e2da; --accent: #1f7a4d; --btn-bg: #111; --btn-fg: #fff;
+    --grad: linear-gradient(180deg, #fbfaf6 0%, #eef6f1 100%);
+  }
+  [data-theme="escuro"] {
+    --bg: #0f1113; --fg: #f4f4f2; --muted: #a6a6a0; --card: #1a1d20;
+    --border: #2a2e33; --accent: #4fd08b; --btn-bg: #f4f4f2; --btn-fg: #111;
+    --grad: linear-gradient(180deg, #0f1113 0%, #14201a 100%);
+  }
+  [data-theme="azul"] {
+    --bg: #0b1a33; --fg: #eaf2ff; --muted: #9db4d6; --card: #12284a;
+    --border: #1f3a64; --accent: #5ab0ff; --btn-bg: #5ab0ff; --btn-fg: #0b1a33;
+    --grad: linear-gradient(180deg, #0b1a33 0%, #10284d 100%);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--fg); line-height: 1.5; }
+  a { color: inherit; text-decoration: none; }
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+  header.top { position: sticky; top: 0; z-index: 10; background: var(--bg); border-bottom: 1px solid var(--border); }
+  header.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 64px; }
+  .logo { font-weight: 800; font-size: 1.25rem; }
+  nav ul { display: flex; gap: 22px; list-style: none; font-size: .95rem; }
+  nav a:hover { color: var(--accent); }
+  .theme-toggle { border: 1px solid var(--border); background: var(--card); color: var(--fg); border-radius: 999px; padding: 6px 12px; cursor: pointer; font-size: .85rem; }
+  .btn { display: inline-flex; flex-direction: column; justify-content: center; background: var(--btn-bg); color: var(--btn-fg); border-radius: 10px; padding: 8px 16px; min-width: 170px; font-size: .75rem; line-height: 1.2; }
+  .btn strong { font-size: 1rem; }
+  .btns { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 24px; }
+  section { padding: 80px 0; }
+  .hero { display: grid; grid-template-columns: 1.1fr 1fr; gap: 40px; align-items: center; padding-top: 60px; }
+  h1 { font-size: clamp(2.2rem, 5vw, 3.4rem); line-height: 1.1; letter-spacing: -0.02em; }
+  h2 { font-size: clamp(1.8rem, 3.6vw, 2.6rem); line-height: 1.15; text-align: center; margin-bottom: 40px; }
+  h3 { font-size: 1.15rem; margin-bottom: 8px; }
+  .lead { color: var(--muted); margin-top: 16px; max-width: 460px; }
+  .phone { width: 260px; height: 520px; margin: 0 auto; border-radius: 36px; border: 10px solid #222; background: linear-gradient(160deg, var(--card), var(--border)); display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: .85rem; text-align: center; padding: 20px; }
+  .placeholder { border: 2px dashed var(--border); border-radius: 16px; min-height: 240px; display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: .9rem; text-align: center; padding: 16px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 18px; padding: 24px; }
+  .card p { color: var(--muted); font-size: .95rem; }
+  .features { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+  .feature-list { display: grid; gap: 14px; }
+  .feature-list .card.active { border-color: var(--accent); }
+  .themes .swatches { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+  .swatch { width: 180px; border-radius: 18px; padding: 20px; text-align: center; border: 1px solid #0003; }
+  .sw-claro { background: #fbfaf6; color: #111; }
+  .sw-escuro { background: #0f1113; color: #f4f4f2; }
+  .sw-azul { background: #0b1a33; color: #eaf2ff; }
+  .testimonials .grid-3 .card { min-height: 160px; }
+  .muted { color: var(--muted); }
+  details { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 18px 22px; margin-bottom: 12px; max-width: 760px; margin-left: auto; margin-right: auto; }
+  summary { cursor: pointer; font-weight: 600; list-style: none; }
+  details p { margin-top: 10px; color: var(--muted); }
+  .blog-cta { text-align: center; margin-top: 24px; }
+  .blog-cta a { color: var(--accent); font-weight: 600; }
+  form.contato { max-width: 620px; margin: 0 auto; display: grid; gap: 14px; }
+  form.contato label { font-size: .9rem; color: var(--muted); display: grid; gap: 6px; }
+  form.contato input, form.contato textarea { font: inherit; padding: 12px; border-radius: 10px; border: 1px solid var(--border); background: var(--card); color: var(--fg); }
+  form.contato textarea { min-height: 140px; }
+  form.contato button { background: var(--btn-bg); color: var(--btn-fg); border: 0; padding: 14px; border-radius: 10px; font-weight: 700; cursor: pointer; font-size: 1rem; }
+  footer { border-top: 1px solid var(--border); padding: 56px 0 40px; margin-top: 40px; }
+  .foot { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 30px; }
+  .foot h3 { font-size: .95rem; }
+  .foot ul { list-style: none; display: grid; gap: 8px; font-size: .9rem; color: var(--muted); }
+  .foot a:hover { color: var(--accent); }
+  .copy { margin-top: 36px; color: var(--muted); font-size: .85rem; }
+  @media (max-width: 860px) {
+    nav { display: none; }
+    .hero, .features, .foot { grid-template-columns: 1fr; }
+    .grid-3 { grid-template-columns: 1fr; }
+    section { padding: 56px 0; }
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a href="#" class="logo" aria-label="Pombo AI, página inicial">Pombo AI</a>
+    <nav aria-label="Menu principal">
+      <ul>
+        <li><a href="#faq">Perguntas frequentes</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="#imprensa">Imprensa</a></li>
+      </ul>
+    </nav>
+    <div style="display:flex;gap:10px;align-items:center;">
+      <button class="theme-toggle" id="tema" aria-label="Trocar tema">Tema: claro</button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="wrap" style="display:contents;">
+    <div>
+      <p class="muted">Nutrição com inteligência artificial</p>
+      <h1 style="margin-top:12px;">Monitore suas calorias apenas com uma foto.</h1>
+      <p class="lead">Tire uma foto da sua refeição e o Pombo AI estima calorias, proteínas, carboidratos e gorduras em segundos. Sem digitar, sem pesar, sem complicação.</p>
+      <div class="btns">
+        <a class="btn" href="#" aria-label="Baixar na App Store"><span>Baixe na</span><strong>App Store</strong></a>
+        <a class="btn" href="#" aria-label="Disponível no Google Play"><span>Disponível no</span><strong>Google Play</strong></a>
+      </div>
+    </div>
+    <div class="phone" role="img" aria-label="Mockup do aplicativo Pombo AI">[Print do app: tela de foto da refeição]</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>O que o Pombo AI inclui?</h2>
+    <div class="features">
+      <div class="phone" role="img" aria-label="Mockup da tela de análise de refeição">[Print do app: resultado da análise]</div>
+      <div class="feature-list">
+        <article class="card active">
+          <h3>Acompanhe sua alimentação com apenas uma foto.</h3>
+          <p>Fotografe o prato e deixe a IA separar os ingredientes e calcular as calorias e os macronutrientes para você.</p>
+        </article>
+        <article class="card">
+          <h3>Pesquise alimentos em um banco de dados completo.</h3>
+          <p>Encontre e registre alimentos com rapidez, buscando por nome, marca ou código de barras.</p>
+        </article>
+        <article class="card">
+          <h3>Acompanhamento de progresso com sugestões da IA.</h3>
+          <p>Acompanhe peso, medidas e metas nutricionais, com recados personalizados para você manter o foco.</p>
+        </article>
+        <article class="card">
+          <h3>Registre água e exercícios todos os dias.</h3>
+          <p>Controle sua hidratação e suas atividades físicas no mesmo lugar em que você acompanha a dieta.</p>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Por que escolher o Pombo AI?</h2>
+    <div class="grid-3">
+      <article class="card">
+        <h3>Libere seu tempo</h3>
+        <p>O Pombo AI calcula suas calorias e nutrientes automaticamente. Você não precisa contar nada manualmente.</p>
+      </article>
+      <article class="card">
+        <h3>Integre com seus apps de fitness favoritos</h3>
+        <p>Conecte o Pombo AI com os apps que você já usa para reunir calorias, proteínas, carboidratos, gorduras e exercícios em um só lugar.</p>
+      </article>
+      <article class="card">
+        <h3>Ganhe clareza sobre o que você come</h3>
+        <p>Uma foto basta para o sensor de profundidade estimar o volume da comida e a IA transformar isso em números fáceis de entender.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="themes">
+  <div class="wrap">
+    <h2>Escolha o tema que combina com você</h2>
+    <div class="swatches">
+      <div class="swatch sw-claro"><h3>Modo claro</h3><p>Leve e arejado para o dia a dia.</p></div>
+      <div class="swatch sw-escuro"><h3>Modo escuro</h3><p>Confortável para usar à noite.</p></div>
+      <div class="swatch sw-azul"><h3>Modo azul</h3><p>Um visual calmo e diferente.</p></div>
+    </div>
+    <p class="muted" style="text-align:center;margin-top:24px;">Troque o tema a qualquer momento pelo botão no topo da página.</p>
+  </div>
+</section>
+
+<section class="testimonials">
+  <div class="wrap">
+    <h2>Milhares de usuários falam sobre nós</h2>
+    <div class="grid-3">
+      <!-- Substitua pelos depoimentos reais dos usuários, com autorização deles -->
+      <article class="card"><p class="muted">[Depoimento real 1 — nome e foto com autorização]</p></article>
+      <article class="card"><p class="muted">[Depoimento real 2 — nome e foto com autorização]</p></article>
+      <article class="card"><p class="muted">[Depoimento real 3 — nome e foto com autorização]</p></article>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <h2>Perguntas frequentes</h2>
+    <details>
+      <summary>O Pombo AI é gratuito?</summary>
+      <p>[Descreva aqui seu modelo de planos e o que está incluído no plano gratuito.]</p>
+    </details>
+    <details>
+      <summary>Como o Pombo AI calcula as calorias de uma foto?</summary>
+      <p>Ele usa inteligência artificial para identificar os alimentos na imagem e estimar o volume de cada um, com o apoio do sensor de profundidade do celular.</p>
+    </details>
+    <details>
+      <summary>A estimativa de calorias é exata?</summary>
+      <p>É uma estimativa. Ela é um bom ponto de partida, e você pode ajustar porções e alimentos sempre que quiser.</p>
+    </details>
+    <details>
+      <summary>Como cancelo minha assinatura?</summary>
+      <p>[Explique o passo a passo de cancelamento de acordo com a loja em que a assinatura foi feita.]</p>
+    </details>
+    <details>
+      <summary>Como entro em contato com o suporte?</summary>
+      <p>Use o formulário de contato no fim desta página ou fale com a gente pelo e-mail [seu-email@dominio.com.br].</p>
+    </details>
+  </div>
+</section>
+
+<section id="imprensa">
+  <div class="wrap">
+    <h2>Imprensa e sugestões</h2>
+    <p class="muted" style="text-align:center;margin:-24px 0 32px;">Quer falar com a gente ou enviar uma sugestão? Preencha o formulário.</p>
+    <form class="contato" action="#" method="post">
+      <label>E-mail
+        <input type="email" name="email" required placeholder="seu@email.com">
+      </label>
+      <label>Assunto
+        <input type="text" name="assunto" required placeholder="Sobre o que você quer falar?">
+      </label>
+      <label>Mensagem
+        <textarea name="mensagem" required placeholder="Escreva sua mensagem ou sugestão"></textarea>
+      </label>
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <div class="logo">Pombo AI</div>
+        <p class="muted" style="margin-top:8px;font-size:.9rem;">Nutrição com IA, uma foto de cada vez.</p>
+        <div class="btns" style="margin-top:16px;">
+          <a class="btn" href="#" style="min-width:140px;" aria-label="Baixar na App Store"><span>Baixe na</span><strong>App Store</strong></a>
+          <a class="btn" href="#" style="min-width:140px;" aria-label="Disponível no Google Play"><span>Disponível no</span><strong>Google Play</strong></a>
+        </div>
+      </div>
+      <div>
+        <h3>Jurídico</h3>
+        <ul>
+          <li><a href="/politica-de-privacidade">Política de Privacidade</a></li>
+          <li><a href="/termos-de-uso">Termos de Uso</a></li>
+          <li><a href="/diretrizes-da-comunidade">Diretrizes da Comunidade</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Empresa</h3>
+        <ul>
+          <li><a href="#faq">Perguntas frequentes</a></li>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="#imprensa">Contato e imprensa</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Redes sociais</h3>
+        <ul>
+          <li><a href="https://www.instagram.com/SEU_USUARIO" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.tiktok.com/@SEU_USUARIO" rel="noopener">TikTok</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="copy">© 2026 Pombo AI. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var temas = ["claro", "escuro", "azul"];
+    var rotulos = { claro: "Modo claro", escuro: "Modo escuro", azul: "Modo azul" };
+    var salvo = null;
+    try { salvo = localStorage.getItem("pombo-tema"); } catch (e) {}
+    var atual = temas.indexOf(salvo) >= 0 ? salvo : "claro";
+    var botao = document.getElementById("tema");
+    function aplicar(t) {
+      document.documentElement.setAttribute("data-theme", t);
+      botao.textContent = rotulos[t];
+      try { localStorage.setItem("pombo-tema", t); } catch (e) {}
+    }
+    aplicar(atual);
+    botao.addEventListener("click", function () {
+      var i = temas.indexOf(document.documentElement.getAttribute("data-theme"));
+      aplicar(temas[(i + 1) % temas.length]);
+    });
+  })();
+</script>
+
+</body>
+</html>

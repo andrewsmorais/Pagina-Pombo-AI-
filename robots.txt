@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+
+# Rastreadores de IA e buscadores: permitem indexação e citação do site
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+Sitemap: https://www.SEU-DOMINIO.com.br/sitemap.xml
