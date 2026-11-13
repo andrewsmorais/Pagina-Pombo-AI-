@@ -479,3 +479,28 @@ footer { border-top: 1px solid var(--linha); padding-block: var(--e9) var(--e6);
   .jejum-texto > p { margin-inline: auto; }
   .jejum-lista { text-align: left; max-width: 420px; margin-inline: auto; }
 }
+
+/* Seção nutrição (Por que escolher) */
+.nutri-sec .antetitulo { text-align: center; font-size: .8rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--verde); margin-bottom: var(--e3); }
+.nutri-intro { text-align: center; max-width: 60ch; margin: calc(-1 * var(--e5)) auto var(--e8); color: var(--tinta-2); font-size: 1.05rem; }
+.nutri-plano { display: grid; grid-template-columns: 1fr 1.05fr; gap: var(--e8); background: #fff; border: 1px solid var(--linha); border-radius: 24px; padding: var(--e8); }
+.nutri-tag { display: inline-block; font-size: .75rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; background: var(--verde-claro); color: var(--verde); padding: 4px 12px; border-radius: 999px; }
+.nutri-plano h3 { font-family: var(--display); font-size: clamp(1.6rem, 2.8vw, 2.2rem); line-height: 1.15; margin: var(--e4) 0; }
+.nutri-plano-txt > p { color: var(--tinta-2); }
+.nutri-check { list-style: none; margin-top: var(--e5); display: grid; gap: var(--e3); }
+.nutri-check li { position: relative; padding-left: 30px; }
+.nutri-check li::before { content: "✓"; position: absolute; left: 0; top: 0; width: 20px; height: 20px; border-radius: 50%; background: var(--verde); color: #fff; font-size: .72rem; font-weight: 700; display: grid; place-items: center; }
+.nutri-plano-opcoes { background: var(--papel); border-radius: 18px; padding: var(--e6); display: grid; gap: var(--e5); align-content: start; }
+.nutri-plano-opcoes h4 { font-size: .78rem; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; color: var(--tinta-2); margin-bottom: var(--e2); }
+.chips { list-style: none; display: flex; flex-wrap: wrap; gap: 6px; }
+.chips li { background: #fff; border: 1px solid var(--linha); border-radius: 999px; padding: 5px 12px; font-size: .85rem; font-weight: 500; }
+.nutri-grade { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--e6); margin-top: var(--e6); }
+.nutri-grade article { background: #fff; border: 1px solid var(--linha); border-radius: 20px; padding: var(--e6); }
+.nutri-ico { display: grid; place-items: center; width: 48px; height: 48px; border-radius: 14px; background: var(--verde-claro); font-size: 1.4rem; margin-bottom: var(--e4); }
+.nutri-grade h3 { font-size: 1.15rem; margin-bottom: var(--e3); }
+.nutri-grade p { color: var(--tinta-2); font-size: .95rem; }
+.nutri-nota { text-align: center; margin-top: var(--e6); font-size: .82rem; color: var(--tinta-2); }
+@media (max-width: 960px) {
+  .nutri-plano { grid-template-columns: 1fr; padding: var(--e6); gap: var(--e6); }
+  .nutri-grade { grid-template-columns: 1fr; }
+}
