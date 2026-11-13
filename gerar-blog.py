@@ -547,6 +547,122 @@ art(slug="ayuno-intermitente-riesgos-quien-no-debe-hacerlo", cat="Ayuno", img="a
   ("Cochrane (2026). Ayuno intermitente para el tratamiento del sobrepeso y la obesidad","https://www.cochrane.org/es/node/11572"),
   ("Semnani-Azad Z. et al. (2025), The BMJ. Resumen en HealthDay","https://www.healthday.com/healthpro-news/weight-loss/intermittent-fasting-reduces-body-weight-versus-ad-libitum-diet")])
 
+# ---------------------------------------------------------------- NUEVOS: BATIDOS Y DESAYUNOS
+U.update({
+ 173180: ("Proteína de suero (whey) en polvo", 352, 78.13, 6.25, 1.56, 3.1),
+ 172470: ("Crema de cacahuete sin sal", 598, 22.21, 22.31, 51.36, 5.0),
+ 169593: ("Cacao puro en polvo sin azúcar", 228, 19.6, 57.9, 13.7, 37.0),
+ 167762: ("Fresas", 32, 0.67, 7.68, 0.3, 2.0),
+ 171711: ("Arándanos", 57, 0.74, 14.49, 0.33, 2.4),
+ 171269: ("Leche desnatada", 34, 3.37, 4.96, 0.08, 0),
+ 170894: ("Yogur griego natural desnatado", 59, 10.19, 3.6, 0.39, 0),
+ 168153: ("Kiwi", 61, 1.14, 14.66, 0.52, 3.0),
+ 170554: ("Semillas de chía", 486, 16.54, 42.12, 30.74, 34.4),
+ 169640: ("Miel", 304, 0.3, 82.4, 0, 0.2),
+ 174091: ("Pan de barra integral", 239, 8.33, 49.1, 1.04, 4.2),
+ 174572: ("Pechuga de pavo en lonchas, baja en sal", 109, 21.81, 3.51, 0.83, 0.5),
+})
+BAT = [
+ dict(id="batido-chocolate-platano", img="s-choc", alt="Batido de chocolate en un vaso con nata y virutas", t="Batido de chocolate y plátano con proteína", rac=1, min=5,
+  intro="Sabe a batido de chocolate de los de toda la vida, pero con mucha proteína y sin azúcar añadido.",
+  ing=[("250 ml de leche desnatada",250,171269),("30 g de proteína de suero (whey) sabor neutro o chocolate",30,173180),("1 plátano pequeño (100 g)",100,173944),("10 g de cacao puro en polvo sin azúcar (1 cucharada)",10,169593),("Hielo al gusto",0,None)],
+  pasos=["Pon la leche en la batidora y después el resto de ingredientes.","Tritura 30 segundos hasta que quede espumoso.","Sirve enseguida con hielo."],
+  aporta="Uno de los batidos con más proteína de la lista gracias al suero de leche, con los hidratos justos del plátano. Ideal después de entrenar."),
+ dict(id="batido-fresa-yogur", img="s-fresa", alt="Batido rosa de fresa en un vaso con fresas", t="Batido de fresa y yogur griego (sin proteína en polvo)", rac=1, min=5,
+  intro="Si no tienes proteína en polvo, el yogur griego desnatado hace el trabajo. Cremoso y fresco.",
+  ing=[("200 g de yogur griego natural desnatado",200,170894),("150 g de fresas",150,167762),("100 ml de leche desnatada",100,171269),("20 g de copos de avena",20,173904),("Unas gotas de vainilla",0,None)],
+  pasos=["Lava las fresas y quítales el rabito.","Tritura todo junto hasta que no queden grumos.","Si lo quieres más frío, usa fresas congeladas."],
+  aporta="Demuestra que no hace falta suplemento: el yogur griego desnatado aporta mucha proteína con muy poca grasa, y las fresas y la avena suman fibra."),
+ dict(id="batido-cacahuete-avena", img="s-cacahuete", alt="Batido cremoso junto a un plátano abierto", t="Batido de crema de cacahuete, avena y plátano", rac=1, min=5,
+  intro="El más energético: perfecto para días de entrenamiento fuerte o si te cuesta llegar a tus calorías.",
+  ing=[("250 ml de leche semidesnatada",250,171267),("25 g de proteína de suero (whey)",25,173180),("40 g de copos de avena",40,173904),("1 plátano pequeño (80 g)",80,173944),("20 g de crema de cacahuete sin azúcar (1 cucharada)",20,172470)],
+  pasos=["Tritura primero la avena con la leche para que quede fina.","Añade el resto de ingredientes y bate hasta que esté cremoso."],
+  aporta="Mucha energía en un vaso: proteína del suero y la leche, hidratos de la avena y el plátano, y grasas de la crema de cacahuete. Útil si quieres ganar peso."),
+ dict(id="batido-cafe-proteico", img="s-cafe", alt="Café con leche frío en un vaso con hielo", t="Café frappé proteico", rac=1, min=5,
+  intro="Desayuno y café en uno. Para quien no tiene hambre por la mañana pero quiere empezar con proteína.",
+  ing=[("100 ml de café solo frío",0,None),("200 ml de leche desnatada",200,171269),("30 g de proteína de suero (whey) sabor vainilla o neutro",30,173180),("5 g de cacao puro en polvo (opcional)",5,169593),("Hielo",0,None)],
+  pasos=["Prepara el café y déjalo enfriar.","Bate el café con la leche, la proteína y el cacao.","Sirve sobre mucho hielo."],
+  aporta="Muy pocas calorías para la proteína que da, porque casi todo viene del suero y la leche desnatada. Ojo con la cafeína si eres sensible a ella."),
+ dict(id="batido-verde-kiwi", img="s-verde", alt="Batido verde en un vaso", t="Batido verde de espinacas, kiwi y yogur", rac=1, min=5,
+  intro="Verde por fuera, dulce por dentro: el plátano y el kiwi tapan el sabor de las espinacas.",
+  ing=[("Un puñado de espinacas frescas (40 g)",40,168462),("1 plátano pequeño (100 g)",100,173944),("1 kiwi (75 g)",75,168153),("150 g de yogur griego natural desnatado",150,170894),("100 ml de leche desnatada",100,171269),("10 g de semillas de chía (1 cucharada)",10,170554)],
+  pasos=["Tritura las espinacas con la leche primero, para que no queden hojas.","Añade el resto y bate hasta que quede liso.","Deja reposar 5 minutos si quieres que la chía espese."],
+  aporta="El más rico en fibra de todos gracias a la fruta, las espinacas y la chía, con la proteína del yogur griego. Una forma fácil de sumar verdura al día."),
+]
+DES = [
+ dict(id="pan-tomate-pavo", img="d-tomate", alt="Tostadas de pan con tomate picado", t="Tostada de pan con tomate, aceite y pavo", rac=1, min=5,
+  intro="El desayuno español de siempre, con un extra de proteína gracias al pavo.",
+  ing=[("80 g de pan de barra integral",80,174091),("1 tomate maduro (100 g)",100,170457),("10 g de aceite de oliva virgen extra (1 cucharada)",10,171413),("60 g de pechuga de pavo en lonchas",60,174572),("Sal",0,None)],
+  pasos=["Tuesta el pan.","Ralla el tomate o frótalo directamente sobre el pan.","Riega con el aceite, pon una pizca de sal y coloca encima el pavo."],
+  aporta="Hidratos del pan integral para empezar el día y proteína magra del pavo. Si usas jamón serrano, ten en cuenta que lleva más sal."),
+ dict(id="gachas-avena-frutos-rojos", img="d-gachas", alt="Gachas de avena con arándanos y fresas", t="Gachas de avena con frutos rojos y yogur", rac=1, min=10,
+  intro="El porridge es un desayuno caliente que llena mucho. Con yogur griego encima sube la proteína.",
+  ing=[("50 g de copos de avena",50,173904),("250 ml de leche semidesnatada",250,171267),("80 g de arándanos o frutos rojos",80,171711),("100 g de yogur griego natural desnatado",100,170894),("Canela al gusto",0,None)],
+  pasos=["Cuece la avena con la leche a fuego medio 5 minutos, removiendo, hasta que espese.","Sirve en un bol con el yogur por encima.","Añade los frutos rojos y la canela."],
+  aporta="Mucha fibra de la avena y la fruta, que ayudan a mantener la saciedad, y proteína de la leche y el yogur. Un desayuno completo y barato."),
+ dict(id="overnight-oats-chia", img="d-overnight", alt="Tarro de avena con yogur y frutos rojos", t="Overnight oats con chía y fresas", rac=1, min=5,
+  intro="Se prepara la noche anterior en un tarro y por la mañana solo tienes que abrir la nevera.",
+  ing=[("40 g de copos de avena",40,173904),("10 g de semillas de chía",10,170554),("125 g de yogur griego natural desnatado",125,170894),("100 ml de leche desnatada",100,171269),("80 g de fresas",80,167762),("5 g de miel (1 cucharadita, opcional)",5,169640)],
+  pasos=["Mezcla en un tarro la avena, la chía, el yogur y la leche.","Tápalo y déjalo en la nevera toda la noche.","Por la mañana añade las fresas troceadas y la miel."],
+  aporta="Buen equilibrio entre proteína, hidratos y fibra, con muy poca grasa. Perfecto para llevar al trabajo."),
+ dict(id="huevos-revueltos-espinacas", img="d-huevos", alt="Huevos revueltos sobre una tostada de pan", t="Huevos revueltos con espinacas sobre pan integral", rac=1, min=10,
+  intro="Un desayuno salado y rápido. Añadir claras aumenta la proteína sin sumar grasa.",
+  ing=[("2 huevos (100 g)",100,171287),("2 claras (60 g)",60,172183),("Un puñado de espinacas (40 g)",40,168462),("1 cucharadita de aceite de oliva (5 g)",5,171413),("1 rebanada grande de pan integral (50 g)",50,172688),("Sal y pimienta",0,None)],
+  pasos=["Saltea las espinacas con el aceite 1 minuto.","Añade los huevos y las claras batidos y remueve a fuego suave hasta que cuajen.","Sirve sobre el pan tostado."],
+  aporta="El desayuno de la lista en el que más energía viene de la proteína, con hidratos moderados del pan integral. Sacia mucho para toda la mañana."),
+ dict(id="tortitas-avena-platano", img="d-tortitas", alt="Tortitas con arándanos y miel", t="Tortitas de avena y plátano sin harina", rac=1, min=15,
+  intro="Tortitas para el fin de semana hechas solo con avena, plátano y huevo.",
+  ing=[("50 g de copos de avena",50,173904),("1 plátano maduro (100 g)",100,173944),("1 huevo (50 g)",50,171287),("2 claras (60 g)",60,172183),("50 g de arándanos",50,171711),("80 g de yogur griego natural desnatado para servir",80,170894),("5 g de miel (opcional)",5,169640)],
+  pasos=["Tritura la avena, el plátano, el huevo y las claras hasta tener una masa.","Haz las tortitas en una sartén antiadherente a fuego medio, 2 minutos por cada lado.","Sirve con el yogur, los arándanos y la miel."],
+  aporta="Un capricho con buen perfil: proteína del huevo y el yogur, e hidratos y fibra de la avena y la fruta."),
+]
+art(slug="batidos-de-proteinas-caseros", cat="Recetas", img="batidos",
+ title="5 batidos de proteínas caseros: recetas fáciles con y sin proteína en polvo",
+ desc="Batidos de proteínas caseros de chocolate, fresa, crema de cacahuete, café y verde. Con calorías, proteínas, hidratos y grasas de cada uno.",
+ mins=7,
+ faq=[("¿Es necesaria la proteína en polvo?","No. Es una forma cómoda de sumar proteína, pero se puede conseguir con alimentos como el yogur griego, la leche o los huevos. El batido de fresa de este artículo no lleva proteína en polvo."),
+      ("¿Cuándo es mejor tomar un batido de proteínas?","Puede servir como desayuno, merienda o después de entrenar. Lo importante es la cantidad de proteína que tomas en el día. En el artículo sobre ganar masa muscular explicamos cuánta se recomienda.")],
+ body=f"""
+<p class="entradilla">Un batido es la forma más rápida de desayunar con proteína o de recuperar después de entrenar. Aquí tienes cinco recetas caseras, con y sin proteína en polvo, cada una con su tabla nutricional.</p>
+<div class="aviso"><p><strong>Sobre la proteína en polvo:</strong> usamos los valores de la proteína de suero (whey) de la base del USDA. Cada marca es distinta, así que revisa la etiqueta de la tuya. Si tienes una enfermedad renal, consulta antes con tu médico.</p></div>
+<nav class="indice-recetas" aria-label="Recetas"><p><strong>Los 5 batidos:</strong></p><ol>{''.join(f'<li><a href="#{r["id"]}">{E(r["t"])}</a></li>' for r in BAT)}</ol></nav>
+{''.join(receta(r) for r in BAT)}
+{NOTA_N}
+<h2>Consejos para que salgan perfectos</h2>
+<ol>
+<li>Pon primero el líquido en la batidora y después los sólidos: tritura mejor.</li>
+<li>Usa fruta congelada para que quede espeso y frío sin hielo.</li>
+<li>Si quieres menos calorías, cambia la leche semidesnatada por desnatada o por bebida vegetal sin azúcar.</li>
+<li>¿Cuánta proteína necesitas al día? Lo explicamos en <a href="recetas-para-ganar-masa-muscular-proteina.html">recetas para ganar masa muscular</a>.</li>
+</ol>
+{APP_FOTO}
+""",
+ fuentes=[("USDA FoodData Central, SR Legacy (base de composición de alimentos)","https://fdc.nal.usda.gov/"),
+  ("Morton R.W. et al. (2018), British Journal of Sports Medicine. PubMed","https://pubmed.ncbi.nlm.nih.gov/28698222/")])
+art(slug="desayunos-saludables-con-proteina", cat="Recetas", img="desayunos",
+ title="5 desayunos saludables y altos en proteína para empezar el día",
+ desc="Pan con tomate y pavo, gachas de avena, overnight oats, huevos revueltos y tortitas de avena. Desayunos fáciles con su información nutricional.",
+ mins=7,
+ faq=[("¿Qué es un desayuno alto en proteína?","Uno en el que una parte importante de la energía viene de la proteína: huevos, yogur griego, leche, pavo o queso fresco. En este artículo marcamos con un sello los que cumplen el criterio europeo de 'alto contenido en proteínas'."),
+      ("¿Hay que desayunar para adelgazar?","No hay una regla única. Lo que cuenta es lo que comes a lo largo del día. Si haces ayuno intermitente, puedes usar estas recetas para romper el ayuno.")],
+ body=f"""
+<p class="entradilla">Empezar el día con proteína ayuda a llegar con menos hambre a la comida. Estos cinco desayunos son fáciles, mezclan lo dulce y lo salado e incluyen un clásico español. Todos llevan su tabla nutricional por ración.</p>
+<nav class="indice-recetas" aria-label="Recetas"><p><strong>Los 5 desayunos:</strong></p><ol>{''.join(f'<li><a href="#{r["id"]}">{E(r["t"])}</a></li>' for r in DES)}</ol></nav>
+{''.join(receta(r) for r in DES)}
+{NOTA_N}
+<h2>Ideas para desayunar mejor</h2>
+<ol>
+<li>Incluye siempre una fuente de proteína: huevo, yogur, leche, pavo o queso fresco.</li>
+<li>Elige pan integral y copos de avena en lugar de bollería.</li>
+<li>Añade fruta entera en vez de zumo.</li>
+<li>¿Sin tiempo por la mañana? Prepara los overnight oats la noche anterior o tómate uno de nuestros <a href="batidos-de-proteinas-caseros.html">batidos de proteínas caseros</a>.</li>
+<li>Si haces ayuno intermitente, mira <a href="que-comer-al-romper-el-ayuno.html">qué comer al romper el ayuno</a>.</li>
+</ol>
+{APP_FOTO}
+""",
+ fuentes=[("USDA FoodData Central, SR Legacy (base de composición de alimentos)","https://fdc.nal.usda.gov/")])
+A[:] = A[-2:] + A[:-2]
+
 # ================================================================ PLANTILLAS
 FONTS = '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">'
 def head(title, desc, canon, img, tipo, extra):
@@ -597,8 +713,8 @@ def tarjeta(b, grande=False):
     sz = "" if grande else "-p"
     return (f'<article class="{clase}" data-cat="{b["cat"]}"><a class="tarjeta-img" href="{b["slug"]}.html" tabindex="-1" aria-hidden="true"><img src="../assets/blog/{b["img"]}{sz}.jpg" alt="" width="{1200 if grande else 640}" height="{900 if grande else 480}" loading="{"eager" if grande else "lazy"}"></a>'
             f'<div class="tarjeta-txt"><span class="cat {CAT_CLASE[b["cat"]]}">{b["cat"]}</span><h2><a href="{b["slug"]}.html">{E(b["title"])}</a></h2>'
-            + (f'<p>{E(b["desc"])}</p>' if grande else '') +
-            f'<p class="meta">{FECHA_TXT} · {b["mins"]} min de lectura</p></div></article>')
+            + f'<p class="resumen">{E(b["desc"])}</p>' +
+            f'<p class="meta"><a class="leer" href="{b["slug"]}.html">Leer más <span aria-hidden="true">›</span></a><span>{b["mins"]} min</span></p></div></article>')
 
 for a in A:
     url = f"{DOM}/blog/{a['slug']}.html"
@@ -608,7 +724,7 @@ for a in A:
          "publisher": {"@type": "Organization", "name": "Pombo AI", "logo": {"@type": "ImageObject", "url": DOM + "/assets/pombo-icon.png"}}},
         {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": DOM + "/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": DOM + "/blog/"}, {"@type": "ListItem", "position": 3, "name": a["title"], "item": url}]},
         {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": r}} for q, r in a["faq"]]}]}
-    recs = [r for r in (BAC if a["slug"].startswith("recetas-de-bacalao") else ADE if "adelgazar" in a["slug"] else MUS if "masa-muscular" in a["slug"] else [])]
+    recs = {"recetas-de-bacalao-faciles-y-saludables":BAC,"recetas-saludables-para-adelgazar-sobrepeso":ADE,"recetas-para-ganar-masa-muscular-proteina":MUS,"batidos-de-proteinas-caseros":BAT,"desayunos-saludables-con-proteina":DES}.get(a["slug"],[])
     for r in recs:
         n = nutr(r["ing"], r["rac"])
         ld["@graph"].append({"@type": "Recipe", "name": r["t"], "image": f"{DOM}/assets/blog/{r['img']}.jpg", "author": {"@type": "Organization", "name": AUTOR},
@@ -678,6 +794,6 @@ for a in A:
 sm = sm.replace("</urlset>", urls + "</urlset>")
 open(ROOT + "/sitemap.xml", "w").write(sm)
 
-for x in (ADE + MUS + BAC):
+for x in (ADE + MUS + BAC + BAT + DES):
     n = nutr(x["ing"], x["rac"]); print(f'{x["t"][:42]:44} {n[0]:5.0f} kcal P{n[1]:4.0f} H{n[2]:4.0f} G{n[3]:4.0f} F{n[4]:4.0f}', sellos(n))
 print(len(A), "artículos")

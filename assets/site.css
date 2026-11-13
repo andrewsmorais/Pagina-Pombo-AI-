@@ -415,3 +415,10 @@ footer { border-top: 1px solid var(--linha); padding-block: var(--e9) var(--e6);
 .tarjeta .cat, .art-cabeza .cat { align-self: flex-start; }
 .art-portada img, .foto-art img, .receta-foto img, .tarjeta-img img { height: auto; }
 .tarjeta-img img { height: 100%; }
+.tarjeta .resumen { font-size: .93rem; line-height: 1.5; color: var(--tinta-2); display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; margin: 0; }
+.tarjeta.destacada .resumen { -webkit-line-clamp: 4; }
+.tarjeta .meta { display: flex; justify-content: space-between; align-items: center; }
+.tarjeta .leer { color: var(--verde); font-weight: 600; text-decoration: none; }
+.tarjeta .leer:hover { text-decoration: underline; }
+.tarjeta .leer span { display: inline-block; transition: transform .2s ease; }
+.tarjeta:hover .leer span { transform: translateX(3px); }
