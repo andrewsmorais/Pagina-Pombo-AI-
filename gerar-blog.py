@@ -1018,7 +1018,7 @@ def head(title, desc, canon, img, tipo, extra):
 <header class="topo"><div class="faixa">
 <a href="../index.html" class="marca" aria-label="Pombo AI, inicio"><img src="../assets/pombo-icon.png" alt="" width="36" height="36"><span>Pombo AI</span></a>
 <nav aria-label="Menú principal"><ul>
-<li><a href="../index.html#faq">Preguntas frecuentes</a></li><li><a href="index.html" aria-current="page">Blog</a></li><li><a href="../imprensa.html">Prensa</a></li>
+<li><a href="../index.html">Inicio</a></li><li><a href="../index.html#faq">Preguntas frecuentes</a></li><li><a href="index.html" aria-current="page">Blog</a></li><li><a href="../imprensa.html">Prensa</a></li>
 </ul></nav></div></header>
 """
 FOOT = """<footer class="pie-blog"><div class="faixa">
