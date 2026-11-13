@@ -504,3 +504,13 @@ footer { border-top: 1px solid var(--linha); padding-block: var(--e9) var(--e6);
   .nutri-plano { grid-template-columns: 1fr; padding: var(--e6); gap: var(--e6); }
   .nutri-grade { grid-template-columns: 1fr; }
 }
+.refe-grade { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--e6); align-items: start; }
+.refe-item { display: grid; gap: var(--e5); justify-items: center; }
+.refe-item .aparelho { max-width: 240px; border-width: 9px; border-radius: 36px; }
+.refe-item .ap-print img { border-radius: 27px; }
+.refe-item figcaption { text-align: left; max-width: 260px; }
+.refe-num { display: inline-grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: var(--verde-claro); color: var(--verde); font-weight: 700; font-size: .85rem; margin-bottom: var(--e3); }
+.refe-item h3 { font-size: 1.12rem; margin-bottom: var(--e2); }
+.refe-item p { color: var(--tinta-2); font-size: .93rem; }
+@media (max-width: 1060px) { .refe-grade { grid-template-columns: repeat(2, 1fr); row-gap: var(--e8); } }
+@media (max-width: 560px) { .refe-grade { grid-template-columns: 1fr; } .refe-item .aparelho { max-width: 260px; } }
