@@ -422,3 +422,40 @@ footer { border-top: 1px solid var(--linha); padding-block: var(--e9) var(--e6);
 .tarjeta .leer:hover { text-decoration: underline; }
 .tarjeta .leer span { display: inline-block; transition: transform .2s ease; }
 .tarjeta:hover .leer span { transform: translateX(3px); }
+
+/* Banco de alimentos (página inicial) */
+.banco-grade { display: grid; grid-template-columns: 1fr 1fr; gap: var(--e9); align-items: center; }
+.banco-visual { position: relative; width: min(100%, 440px); aspect-ratio: 1; justify-self: center; }
+.banco-disco { position: absolute; inset: 14% 4% 0 4%; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #2f9a73, var(--verde)); }
+.banco-visual::before { content: ""; position: absolute; inset: 0; background-image: radial-gradient(var(--linha) 1.5px, transparent 1.5px); background-size: 18px 18px; opacity: .9; z-index: -1; }
+.banco-foto { position: absolute; left: 20%; top: 18%; width: 60%; aspect-ratio: 1; border-radius: 22px; overflow: hidden; box-shadow: 0 24px 50px -24px rgba(20,30,40,.55); background: #fff; }
+.banco-foto img { width: 100%; height: 100%; object-fit: cover; }
+.banco-busca { position: absolute; left: 2%; top: 9%; display: flex; align-items: center; gap: 10px; background: #fff; color: var(--tinta-2); padding: 12px 22px 12px 16px; border-radius: 999px; box-shadow: 0 10px 28px -12px rgba(20,30,40,.35); font-weight: 600; font-size: .95rem; }
+.banco-busca span { color: var(--tinta); }
+.banco-anel { position: absolute; right: 2%; top: 2%; width: 34%; aspect-ratio: 1; background: #fff; border-radius: 50%; box-shadow: 0 14px 34px -14px rgba(20,30,40,.4); padding: 7%; }
+.banco-anel svg { width: 100%; height: 100%; }
+.banco-anel div { position: absolute; inset: 0; display: grid; place-content: center; text-align: center; line-height: 1; }
+.banco-anel strong { font-family: var(--display); font-size: clamp(1.8rem, 4vw, 2.6rem); }
+.banco-anel span { color: var(--tinta-2); font-size: .9rem; margin-top: 4px; }
+.banco-macros { position: absolute; right: 0; bottom: 8%; list-style: none; background: #fff; border-radius: 14px; padding: 12px 16px; display: grid; gap: 6px; font-size: .85rem; font-weight: 600; box-shadow: 0 12px 30px -14px rgba(20,30,40,.4); }
+.banco-macros .pt { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 7px; }
+.banco-macros .pt.p { background: #1f7d5c; } .banco-macros .pt.h { background: #e0a43a; } .banco-macros .pt.g { background: #7a4fa8; }
+.banco-texto h2 { text-align: left; font-size: clamp(2rem, 4.2vw, 3.1rem); line-height: 1.08; }
+.banco-texto > p { margin-top: var(--e5); color: var(--tinta-2); font-size: 1.05rem; max-width: 48ch; }
+.banco-numeros { list-style: none; display: flex; flex-wrap: wrap; gap: var(--e6); margin-top: var(--e6); }
+.banco-numeros li { display: grid; }
+.banco-numeros strong { font-family: var(--display); font-size: 2rem; color: var(--verde); line-height: 1.1; }
+.banco-numeros span { font-size: .88rem; color: var(--tinta-2); }
+.banco-nota { margin-top: var(--e5); font-size: .8rem; color: var(--tinta-2); }
+@media (max-width: 960px) {
+  .banco-grade { grid-template-columns: 1fr; gap: var(--e7); }
+  .banco-texto h2 { text-align: center; }
+  .banco-texto { text-align: center; }
+  .banco-texto > p { margin-inline: auto; }
+  .banco-numeros { justify-content: center; }
+}
+.banco-texto h2 { margin: 0; }
+.banco-anel { height: auto; display: block; }
+.banco-anel svg { display: block; }
+.banco-numeros { gap: var(--e5) var(--e7); }
+.banco-numeros { gap: var(--e4) var(--e6); }
