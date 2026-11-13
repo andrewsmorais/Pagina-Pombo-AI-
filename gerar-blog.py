@@ -663,6 +663,332 @@ art(slug="desayunos-saludables-con-proteina", cat="Recetas", img="desayunos",
  fuentes=[("USDA FoodData Central, SR Legacy (base de composición de alimentos)","https://fdc.nal.usda.gov/")])
 A[:] = A[-2:] + A[:-2]
 
+# ---------------------------------------------------------------- NUEVOS 2: PESCADO E HIDRATACIÓN
+U.update({
+ 175139: ("Sardinas en aceite, en conserva, escurridas", 208, 24.62, 0, 11.45, 0),
+ 175140: ("Sardinas en tomate, en conserva, escurridas", 185, 20.86, 0.54, 10.45, 0.1),
+ 173713: ("Merluza (referencia USDA: whiting / merluza plateada, cruda)", 90, 18.31, 0, 1.31, 0),
+ 168389: ("Espárragos verdes", 20, 2.2, 3.88, 0.12, 2.1),
+ 168910: ("Pasta integral cocida", 149, 5.99, 30.07, 1.71, 3.9),
+ 168409: ("Pepino", 15, 0.65, 3.63, 0.11, 0.5),
+ 169387: ("Rúcula", 25, 2.58, 3.65, 0.66, 1.6),
+ 173424: ("Huevo duro", 155, 12.58, 1.12, 10.61, 0),
+ 171329: ("Pimentón", 282, 14.14, 53.99, 12.89, 34.9),
+ 170427: ("Pimiento verde", 20, 0.86, 4.64, 0.17, 1.7),
+})
+for a in A:
+    if a["cat"] == "Pescado": a["cat"] = "Recetas"
+
+SAR = [
+ dict(id="tosta-sardinas", img="sa-tosta", alt="Tostadas de pan con sardinas y cebolleta", t="Tosta de sardinas con tomate y rúcula", rac=1, min=5,
+  intro="Una cena en cinco minutos con una lata de sardinas, pan integral y un poco de verdura.",
+  ing=[("2 rebanadas de pan integral (70 g)",70,172688),("1 lata de sardinas en aceite, escurridas (85 g)",85,175139),("1 tomate pequeño (80 g)",80,170457),("Un puñado de rúcula (15 g)",15,169387),("Unas gotas de limón y pimienta",0,None)],
+  pasos=["Tuesta el pan.","Ralla el tomate sobre el pan o córtalo en rodajas finas.","Coloca las sardinas escurridas, la rúcula y unas gotas de limón."],
+  aporta="Proteína del pescado y del pan, con la grasa propia del pescado azul. Al estar escurridas, la mayor parte del aceite de la lata se queda fuera."),
+ dict(id="ensalada-patata-sardinas", img="sa-ensalada", cap="Imagen ilustrativa. Foto: Unsplash", alt="Lata de sardinas abierta junto a pan", t="Ensalada de patata, sardinas y huevo", rac=2, min=25,
+  intro="Una ensalada de verano muy completa: patata, pescado azul y huevo.",
+  ing=[("400 g de patatas",400,170026),("2 latas de sardinas en aceite, escurridas (170 g)",170,175139),("2 huevos duros (100 g)",100,173424),("1 tomate grande (150 g)",150,170457),("½ cebolla tierna (50 g)",50,170000),("10 g de aceite de oliva virgen extra",10,171413),("Vinagre, sal y perejil",0,None)],
+  pasos=["Cuece las patatas con piel unos 20 minutos, pélalas y córtalas en dados.","Mezcla con el tomate, la cebolla y el huevo en trozos.","Añade las sardinas por encima y aliña con aceite, vinagre y perejil."],
+  aporta="Un plato único con hidratos de la patata y mucha proteína del pescado y el huevo. Ideal para llevar en táper."),
+ dict(id="pasta-sardinas-tomate", img="sa-pasta", cap="Imagen ilustrativa. Foto: Unsplash", alt="Plato de pasta", t="Pasta integral con sardinas en tomate", rac=2, min=20,
+  intro="Un recurso de despensa: pasta, una lata de sardinas en tomate y un sofrito rápido.",
+  ing=[("300 g de pasta integral cocida (unos 120 g en seco)",300,168910),("2 latas de sardinas en tomate, escurridas (200 g)",200,175140),("200 g de tomate triturado",200,170457),("½ cebolla (80 g)",80,170000),("2 dientes de ajo (6 g)",6,169230),("10 g de aceite de oliva virgen extra",10,171413),("Perejil y guindilla al gusto",0,None)],
+  pasos=["Cuece la pasta según el paquete.","Sofríe la cebolla y el ajo picados en el aceite, añade el tomate y deja 8 minutos.","Incorpora las sardinas en trozos, mezcla con la pasta y termina con perejil."],
+  aporta="Hidratos de la pasta integral para tener energía y proteína del pescado azul. Un plato barato que se hace con lo que hay en la despensa."),
+]
+MER = [
+ dict(id="merluza-gallega", img="me-gallega", cap="Imagen ilustrativa. Foto: Unsplash", alt="Fuente de patatas al horno con perejil", t="Merluza a la gallega", rac=4, min=30,
+  intro="Merluza cocida con patatas y una ajada de aceite y pimentón por encima. Un clásico gallego muy sencillo.",
+  ing=[("600 g de merluza en rodajas o lomos",600,173713),("600 g de patatas",600,170026),("30 g de aceite de oliva virgen extra",30,171413),("2 dientes de ajo (8 g)",8,169230),("1 cucharadita de pimentón dulce (4 g)",4,171329),("Laurel y sal",0,None)],
+  pasos=["Cuece las patatas en rodajas gruesas con agua, sal y laurel unos 15 minutos.","Añade la merluza y cuece 5 o 6 minutos más, sin que hierva fuerte.","Mientras, dora el ajo laminado en el aceite, aparta del fuego y añade el pimentón.","Escurre la merluza y las patatas y riega con la ajada."],
+  aporta="Mucha proteína y muy poca grasa del pescado blanco, con los hidratos de la patata. La mayor parte de la grasa del plato viene del aceite de la ajada."),
+ dict(id="merluza-horno-pimientos", img="me-horno", alt="Pescado blanco con pimientos asados y limón", t="Merluza al horno con pimientos y limón", rac=2, min=30,
+  intro="Pimientos asados como cama y la merluza encima: todo en una bandeja.",
+  ing=[("350 g de lomos de merluza",350,173713),("1 pimiento rojo (150 g)",150,170108),("1 pimiento verde (100 g)",100,170427),("1 cebolla (100 g)",100,170000),("15 g de aceite de oliva virgen extra",15,171413),("1 limón (20 g de zumo)",20,167747),("Sal y pimienta",0,None)],
+  pasos=["Precalienta el horno a 200 °C.","Asa los pimientos y la cebolla en tiras con la mitad del aceite durante 20 minutos.","Coloca la merluza encima, riega con el resto del aceite y el limón y hornea 8 a 10 minutos."],
+  aporta="Un plato ligero con mucha proteína y verdura. Ideal para la cena si buscas algo que sacie con pocas calorías."),
+ dict(id="merluza-plancha-verduras", img="me-plancha", alt="Filete de pescado blanco a la plancha con verduras", t="Merluza a la plancha con verduras salteadas", rac=2, min=20,
+  intro="La forma más rápida de comer pescado blanco entre semana.",
+  ing=[("350 g de lomos de merluza",350,173713),("1 calabacín (200 g)",200,169291),("1 zanahoria (100 g)",100,170393),("150 g de brócoli",150,170379),("10 g de aceite de oliva virgen extra",10,171413),("Limón, ajo en polvo y sal",0,None)],
+  pasos=["Saltea las verduras en tiras con la mitad del aceite 6 a 8 minutos, que queden al dente.","Haz la merluza a la plancha con el resto del aceite, 3 minutos por cada lado.","Sirve con las verduras y un chorrito de limón."],
+  aporta="Es de los platos con menos calorías del blog y con mucha proteína. Si necesitas más energía, añade pan integral, arroz o patata."),
+]
+SAL = [
+ dict(id="salmon-esparragos", img="so-esparragos", alt="Lomos de salmón con espárragos verdes en una bandeja de horno", t="Salmón al horno con espárragos y patata", rac=2, min=35,
+  intro="Bandeja de horno con todo: patata, espárragos y salmón. Sin cacharros que fregar.",
+  ing=[("2 lomos de salmón (300 g)",300,175167),("250 g de espárragos verdes",250,168389),("300 g de patata",300,170026),("10 g de aceite de oliva virgen extra",10,171413),("Limón, eneldo y sal",0,None)],
+  pasos=["Precalienta el horno a 200 °C y hornea la patata en rodajas finas con el aceite 15 minutos.","Añade los espárragos y el salmón y hornea 12 a 15 minutos más.","Termina con limón y eneldo."],
+  aporta="Proteína y la grasa propia del pescado azul, con hidratos de la patata y fibra de los espárragos. Un plato completo."),
+ dict(id="salmon-papillote", img="so-papillote", alt="Salmón envuelto en papel de aluminio sobre la parrilla", t="Salmón en papillote con verduras", rac=2, min=25,
+  intro="El papillote cocina el pescado en su propio vapor: queda jugoso y casi sin aceite.",
+  ing=[("2 lomos de salmón (300 g)",300,175167),("1 calabacín pequeño (150 g)",150,169291),("1 zanahoria (100 g)",100,170393),("½ cebolla (80 g)",80,170000),("Zumo de 1 limón (20 g)",20,167747),("5 g de aceite de oliva",5,171413),("Sal, pimienta y hierbas",0,None)],
+  pasos=["Precalienta el horno a 200 °C.","Corta las verduras en tiras finas y ponlas sobre papel de horno con el salmón encima.","Añade el limón, el aceite y las hierbas, cierra bien el paquete y hornea 15 minutos."],
+  aporta="Mucha proteína con pocos hidratos. Casi toda la grasa viene del propio salmón, porque apenas lleva aceite."),
+ dict(id="ensalada-salmon-aguacate", img="so-ensalada", alt="Ensalada con salmón y aguacate", t="Ensalada de salmón, aguacate y rúcula", rac=2, min=15,
+  intro="Una ensalada templada con salmón a la plancha. Si te sobra salmón del día anterior, mejor aún.",
+  ing=[("200 g de salmón",200,175167),("1 aguacate (140 g)",140,171705),("60 g de rúcula",60,169387),("1 tomate (150 g)",150,170457),("½ pepino (100 g)",100,168409),("10 g de aceite de oliva virgen extra",10,171413),("Limón y sal",0,None)],
+  pasos=["Haz el salmón a la plancha 3 o 4 minutos por lado y desmígalo.","Mezcla la rúcula, el tomate, el pepino y el aguacate en dados.","Añade el salmón templado y aliña con aceite y limón."],
+  aporta="La más grasa de las tres por el aguacate y el salmón, con pocos hidratos. Buena opción si sigues una alimentación baja en hidratos."),
+]
+ATU = [
+ dict(id="ensalada-pasta-atun", img="at-pasta", alt="Ensalada de pasta con atún y verduras", t="Ensalada de pasta integral con atún", rac=2, min=20,
+  intro="La ensalada de táper por excelencia, en versión integral.",
+  ing=[("300 g de pasta integral cocida",300,168910),("2 latas de atún al natural, escurrido (160 g)",160,171986),("1 tomate (150 g)",150,170457),("60 g de maíz dulce",60,169214),("½ pimiento rojo (80 g)",80,170108),("10 g de aceite de oliva virgen extra",10,171413),("Orégano y sal",0,None)],
+  pasos=["Cuece la pasta, escúrrela y enfríala con agua.","Mezcla con el atún, el tomate y el pimiento en dados y el maíz.","Aliña con aceite y orégano. Aguanta bien en la nevera hasta el día siguiente."],
+  aporta="Equilibrada: hidratos de la pasta integral y mucha proteína del atún al natural, con poca grasa."),
+ dict(id="tostada-atun-aguacate", img="at-tosta", alt="Tostadas con aguacate y tomate", t="Tostada de atún, aguacate y tomate", rac=1, min=5,
+  intro="Desayuno, merienda o cena rápida con proteína y grasas saludables.",
+  ing=[("2 rebanadas de pan integral (70 g)",70,172688),("1 lata de atún al natural, escurrido (80 g)",80,171986),("⅓ de aguacate (50 g)",50,171705),("½ tomate (60 g)",60,170457),("Limón, pimienta y sal",0,None)],
+  pasos=["Tuesta el pan y aplasta el aguacate encima con limón y pimienta.","Añade el atún escurrido y el tomate en dados."],
+  aporta="Mucha proteína del atún, hidratos y fibra del pan integral y grasa del aguacate. Saciante y lista en cinco minutos."),
+ dict(id="tomates-rellenos-atun", img="at-tomates", alt="Tomates rellenos al horno", cap="Imagen ilustrativa. Foto: Unsplash", t="Tomates rellenos de atún y huevo", rac=2, min=20,
+  intro="Un entrante clásico de verano. Usamos yogur griego en lugar de mayonesa para aligerarlo.",
+  ing=[("4 tomates grandes (600 g)",600,170457),("2 latas de atún al natural, escurrido (160 g)",160,171986),("2 huevos duros (100 g)",100,173424),("30 g de cebolla",30,170000),("60 g de yogur griego natural desnatado",60,170894),("Perejil, sal y pimienta",0,None)],
+  pasos=["Corta la parte de arriba de los tomates y vacíalos con una cuchara.","Mezcla el atún, el huevo picado, la cebolla, el yogur y un poco de la pulpa del tomate.","Rellena los tomates y sírvelos fríos."],
+  aporta="Mucha proteína y pocos hidratos, con muy pocas calorías. Ideal como cena ligera o primer plato."),
+]
+
+art(slug="recetas-de-salmon-faciles", cat="Recetas", img="salmon",
+ title="3 recetas de salmón fáciles y saludables: al horno, en papillote y en ensalada",
+ desc="Salmón al horno con espárragos, en papillote con verduras y en ensalada con aguacate. Recetas fáciles con calorías, proteínas, hidratos y grasas por ración.",
+ mins=7,
+ faq=[("¿Cuántas veces a la semana se puede comer salmón?","El salmón es pescado azul. Las recomendaciones de la AESAN proponen 3 o más raciones de pescado a la semana, priorizando el azul, así que el salmón puede ser una de ellas, alternando con otros pescados."),
+      ("¿Se puede comer salmón crudo en casa?","Para comerlo crudo o poco hecho (sushi, tartar) hay que congelarlo antes para eliminar el anisakis. Lo explicamos en nuestra guía del anisakis.")],
+ body=f"""
+<p class="entradilla">El salmón se cocina en minutos y casi no necesita aceite. Estas tres recetas cubren el horno, el papillote y una ensalada, cada una con su tabla nutricional.</p>
+<nav class="indice-recetas" aria-label="Recetas"><p><strong>Las 3 recetas:</strong></p><ol>{''.join(f'<li><a href="#{r["id"]}">{E(r["t"])}</a></li>' for r in SAL)}</ol></nav>
+{''.join(receta(r) for r in SAL)}
+{NOTA_N}
+<p>¿Quieres comerlo crudo? Antes lee <a href="anisakis-como-evitarlo-en-casa.html">cómo evitar el anisakis en casa</a>. Y si quieres más ideas, mira las <a href="recetas-de-merluza-faciles.html">recetas de merluza</a> y los <a href="beneficios-del-pescado-cuanto-comer.html">beneficios del pescado</a>.</p>
+{APP_FOTO}
+""",
+ fuentes=[("USDA FoodData Central, SR Legacy","https://fdc.nal.usda.gov/"),("OCU. Nuevas recomendaciones dietéticas de la AESAN","https://www.ocu.org/alimentacion/comer-bien/noticias/recomendaciones-dieteticas-aesan")])
+
+art(slug="cuanta-agua-beber-al-dia", cat="Hidratación", img="h-agua",
+ title="¿Cuánta agua hay que beber al día? Lo que dice la EFSA",
+ desc="Cuánta agua necesitas al día según la Autoridad Europea de Seguridad Alimentaria (EFSA), cuánta viene de la comida y cómo saber si bebes suficiente.",
+ mins=5,
+ faq=[("¿Hay que beber 2 litros de agua al día?","La EFSA fija una ingesta adecuada de unos 2 litros al día para las mujeres y 2,5 litros para los hombres, pero esa cifra incluye el agua de los alimentos y de otras bebidas, no solo el agua del vaso."),
+      ("¿El agua del grifo es igual de buena que la embotellada?","Según Consumer, el agua del grifo y la mineral embotellada son igual de sanas y seguras; cambian el sabor y el precio.")],
+ body=f"""
+<p class="entradilla">"Hay que beber dos litros de agua al día" es de las frases más repetidas. La realidad es un poco distinta: la cifra existe, pero incluye mucho más que el agua del vaso.</p>
+<div class="datos3">
+<div><strong>2 L</strong><span>al día para mujeres a partir de 14 años (EFSA)</span></div>
+<div><strong>2,5 L</strong><span>al día para hombres a partir de 14 años (EFSA)</span></div>
+<div><strong>≈ 20 %</strong><span>del agua que tomamos llega con la comida</span></div>
+</div>
+
+<h2>La recomendación oficial en Europa</h2>
+<p>La EFSA estableció en 2010 las cantidades de agua recomendables para la población general, con temperatura y actividad física moderadas, incluyendo lo que aportan los alimentos. Para mayores de 14 años son unos 2 litros al día en mujeres y 2,5 litros en hombres.</p>
+<p>Para los niños, según Consumer, las cifras son de 1,3 L/día entre 2 y 3 años, 1,6 L/día entre 4 y 8 años, y 1,9 L/día en niñas y 2,1 L/día en niños de 9 a 13 años.</p>
+
+<h2>No todo tiene que ser agua del vaso</h2>
+<p>La estimación general es que solo el 20 % del agua que tomamos viene de la comida y el 80 % restante hay que beberlo. Esto incluye agua, leche, infusiones y otras bebidas, aunque el agua debería ser la principal.</p>
+{fig("h-agua2","Manos recogiendo agua del grifo")}
+
+<h2>Cuándo necesitas más</h2>
+<ul>
+<li>Cuando hace calor o haces ejercicio, porque pierdes más líquido con el sudor.</li>
+<li>En el embarazo y la lactancia, cuando la referencia sube a 2,3 y 2,7 litros al día, respectivamente.</li>
+<li>Si tienes fiebre, diarrea o vómitos.</li>
+</ul>
+<p>Si entrenas, lee también nuestra guía de <a href="hidratacion-ejercicio-cuanta-agua-beber.html">cuánta agua beber antes, durante y después del ejercicio</a>.</p>
+
+<h2>Cómo saber si bebes suficiente</h2>
+<ol>
+<li>Mira el color de la orina: un amarillo claro es buena señal.</li>
+<li>Lleva una botella contigo y rellénala a lo largo del día.</li>
+<li>Bebe con las comidas y entre horas, sin esperar a tener mucha sed.</li>
+<li>Elige agua como bebida principal: el agua del grifo es igual de segura que la embotellada.</li>
+</ol>
+""",
+ fuentes=[("Consumer. Agua: todo lo que debes saber (recomendaciones EFSA por edad)","https://www.consumer.es/?p=116530"),
+  ("AESAN. EFSA establece valores dietéticos de referencia para el agua (2010)","https://www.aesan.gob.es/AECOSAN/web/seguridad_alimentaria/noticias_efsa/2010/valores_nutrientes.htm"),
+  ("elDiario.es. ¿Cuánta agua necesitamos beber al día?","https://www.eldiario.es/1_a732b9"),
+  ("Sanitas. Cantidad diaria de agua recomendada","https://www.sanitas.es/biblioteca-de-salud/dieta-alimentacion/nutricion/cantidad-diaria-de-agua-recomendada")])
+
+art(slug="recetas-de-merluza-faciles", cat="Recetas", img="merluza",
+ title="3 recetas de merluza fáciles: a la gallega, al horno y a la plancha",
+ desc="Merluza a la gallega, al horno con pimientos y a la plancha con verduras. Tres recetas de pescado blanco con su información nutricional.",
+ mins=7,
+ faq=[("¿La merluza es pescado blanco o azul?","La merluza es un pescado blanco: tiene muy poca grasa y mucha proteína."),
+      ("¿Cuánto tiempo se cocina la merluza?","Muy poco: unos pocos minutos a la plancha o al vapor, y unos 8 a 10 minutos al horno según el grosor. Si se pasa, queda seca.")],
+ body=f"""
+<p class="entradilla">La merluza es uno de los pescados más consumidos en España. Es suave, sin espinas en los lomos y muy ligera. Aquí tienes tres formas de prepararla con su tabla nutricional.</p>
+<div class="aviso"><p><strong>Nota sobre los datos:</strong> la base del USDA no tiene una entrada con el nombre de merluza europea. Usamos la de "whiting", que en Estados Unidos corresponde a la merluza plateada, como referencia aproximada.</p></div>
+<nav class="indice-recetas" aria-label="Recetas"><p><strong>Las 3 recetas:</strong></p><ol>{''.join(f'<li><a href="#{r["id"]}">{E(r["t"])}</a></li>' for r in MER)}</ol></nav>
+{''.join(receta(r) for r in MER)}
+{NOTA_N}
+<p>Más ideas de pescado: <a href="recetas-de-bacalao-faciles-y-saludables.html">recetas de bacalao</a> y <a href="recetas-de-salmon-faciles.html">recetas de salmón</a>.</p>
+{APP_FOTO}
+""",
+ fuentes=[("USDA FoodData Central, SR Legacy","https://fdc.nal.usda.gov/")])
+
+art(slug="bebidas-isotonicas-o-agua-cuando-tomarlas", cat="Hidratación", img="h-iso",
+ title="Bebidas isotónicas o agua: cuándo necesitas cada una",
+ desc="Cuándo basta con agua y cuándo tiene sentido una bebida deportiva con sodio e hidratos: qué dicen los estudios sobre el ejercicio de más de una hora.",
+ mins=5,
+ faq=[("¿Necesito una bebida isotónica para ir al gimnasio?","En la mayoría de sesiones de menos de una hora, el agua es suficiente. Las bebidas con hidratos y sodio tienen más sentido en ejercicio intenso de más de una hora o con mucho calor."),
+      ("¿Qué lleva una buena bebida deportiva?","Hidratos de carbono para dar energía y sodio, que es el electrolito que más se pierde con el sudor.")],
+ body=f"""
+<p class="entradilla">Las bebidas deportivas se venden como imprescindibles, pero no siempre hacen falta. La clave está en cuánto dura y lo intenso que es tu entrenamiento.</p>
+<div class="datos3">
+<div><strong>&lt; 1 h</strong><span>de ejercicio: normalmente basta con agua</span></div>
+<div><strong>30–60 g</strong><span>de hidratos por hora en ejercicio intenso de más de 1 hora</span></div>
+<div><strong>0,5–0,7 g/L</strong><span>de sodio en la bebida en esos casos</span></div>
+</div>
+
+<h2>Cuándo basta con agua</h2>
+<p>En sesiones de gimnasio, carrera suave o deportes de menos de una hora a intensidad moderada, el agua suele ser suficiente. Las bebidas especializadas normalmente no son necesarias, salvo que entrenes con mucho calor o humedad.</p>
+{fig("h-gym","Persona atándose las zapatillas junto a una botella de agua y unas mancuernas")}
+
+<h2>Cuándo tiene sentido una bebida deportiva</h2>
+<p>Una revisión publicada en PubMed sobre líquidos y rendimiento en resistencia indica que, en ejercicio intenso de más de una hora, conviene tomar entre 30 y 60 g de hidratos por hora y beber entre 600 y 1.200 mL por hora de una bebida con hidratos y sodio (0,5 a 0,7 g por litro).</p>
+<p>La mala hidratación y la falta de hidratos son las dos causas más frecuentes de fatiga durante el ejercicio, según Consumer. Por eso estas bebidas combinan agua, azúcares y electrolitos.</p>
+
+<h2>El electrolito que importa: el sodio</h2>
+<p>Con el sudor se pierden sales, sobre todo sodio. Consumer explica que el sodio es el electrolito más importante de una bebida deportiva y el único que aporta beneficios cuando se toma durante el ejercicio. En sesiones largas también ayuda a evitar beber solo agua en exceso, que puede bajar el sodio en sangre.</p>
+
+<h2>Bebidas deportivas no son refrescos</h2>
+<ul>
+<li>Llevan azúcar: si no haces ejercicio largo, son calorías que no necesitas.</li>
+<li>No confundas bebidas deportivas con bebidas energéticas, que llevan cafeína.</li>
+<li>Una alternativa casera: agua, un poco de zumo y una pizca de sal, ajustando a tu gusto.</li>
+</ul>
+<p>Para las cantidades antes, durante y después de entrenar, lee <a href="hidratacion-ejercicio-cuanta-agua-beber.html">hidratación y ejercicio</a>.</p>
+""",
+ fuentes=[("Coyle E.F. (2004). Fluids and hydration in prolonged endurance performance. PubMed","https://pubmed.ncbi.nlm.nih.gov/15212747/"),
+  ("Consumer. Bebidas para el deportista","https://www.consumer.es/?p=43264"),
+  ("Fitgeneration. ¿Qué beber durante el entrenamiento?","https://fitgeneration.es/beber-durante-entrenamiento/")])
+
+art(slug="recetas-con-atun-en-lata", cat="Recetas", img="atun",
+ title="3 recetas con atún en lata: rápidas, baratas y con mucha proteína",
+ desc="Ensalada de pasta integral con atún, tostada de atún y aguacate y tomates rellenos. Recetas fáciles con su información nutricional.",
+ mins=6,
+ faq=[("¿El atún en lata tiene mucho mercurio?","Las conservas de atún no se hacen con atún rojo, la especie con más mercurio, por lo que según Consumer también los niños pueden tomarlas dentro de las 3 o 4 raciones semanales de pescado."),
+      ("¿Atún al natural o en aceite?","El atún al natural tiene muy poca grasa. Si lo compras en aceite, escúrrelo bien: la mayor parte de la grasa extra está en el aceite de la lata.")],
+ body=f"""
+<p class="entradilla">Una lata de atún es proteína lista para usar. Estas tres recetas la convierten en una comida completa en pocos minutos.</p>
+<nav class="indice-recetas" aria-label="Recetas"><p><strong>Las 3 recetas:</strong></p><ol>{''.join(f'<li><a href="#{r["id"]}">{E(r["t"])}</a></li>' for r in ATU)}</ol></nav>
+{''.join(receta(r) for r in ATU)}
+{NOTA_N}
+<h2>¿Y el mercurio?</h2>
+<p>La AESAN recomienda que embarazadas, mujeres en lactancia y niños menores de 10 años eviten el atún rojo, el pez espada, el tiburón y el lucio. Las conservas de atún no se hacen con atún rojo, así que entran dentro de las 3 o 4 raciones semanales de pescado de contenido bajo o medio. Más detalles en <a href="beneficios-del-pescado-cuanto-comer.html">beneficios del pescado</a>.</p>
+{APP_FOTO}
+""",
+ fuentes=[("USDA FoodData Central, SR Legacy","https://fdc.nal.usda.gov/"),
+  ("Consumer. Pescado y mercurio: todo lo que debes saber","https://www.consumer.es/?p=118478"),
+  ("Comunidad de Madrid. Mercurio en el pescado","https://www.comunidad.madrid/salud/mercurio-pescado")])
+
+art(slug="calor-ejercicio-deshidratacion-golpe-de-calor", cat="Hidratación", img="h-calor",
+ title="Hacer deporte con calor: señales de deshidratación y golpe de calor",
+ desc="Cómo entrenar con calor sin riesgos: recomendaciones del Ministerio de Sanidad, síntomas del golpe de calor y qué hacer ante calambres o mareos.",
+ mins=6,
+ faq=[("¿A qué hora es mejor hacer deporte en verano?","El Ministerio de Sanidad recomienda reducir la actividad física y evitar el deporte al aire libre en las horas centrales del día. Es mejor entrenar a primera hora de la mañana o al final de la tarde."),
+      ("¿Qué temperatura corporal tiene un golpe de calor?","Se habla de golpe de calor cuando la temperatura corporal supera los 40 °C. Es una urgencia: llama al 112.")],
+ body=f"""
+<p class="entradilla">Entrenar con calor exige más al cuerpo. Saber reconocer las señales a tiempo marca la diferencia entre un mal día y una urgencia.</p>
+<div class="aviso"><p><strong>Urgencia:</strong> si alguien tiene la piel muy caliente, está confuso o pierde el conocimiento tras hacer ejercicio con calor, llama al 112.</p></div>
+
+<h2>Recomendaciones del Ministerio de Sanidad</h2>
+<ul>
+<li>Beber agua y líquidos con frecuencia, aunque no tengas sed.</li>
+<li>Reducir la actividad física y evitar el deporte al aire libre en las horas centrales del día.</li>
+<li>Usar ropa ligera, holgada y que transpire, con gorra y gafas de sol.</li>
+<li>Evitar el alcohol, la cafeína y las bebidas muy azucaradas.</li>
+</ul>
+{fig("h-calor2","Persona corriendo al atardecer con el sol bajo")}
+
+<h2>Calambres por calor</h2>
+<p>Aparecen sobre todo cuando se suda mucho durante una actividad intensa, en piernas, abdomen o brazos. El Ministerio de Sanidad recomienda parar, descansar en un sitio fresco, evitar el esfuerzo intenso durante varias horas, tomar zumos ligeros o bebidas deportivas diluidas en agua y consultar al médico si duran más de una hora.</p>
+
+<h2>Agotamiento por calor</h2>
+<p>Muchas personas restan importancia a síntomas como el cansancio intenso, el mareo o la debilidad, que pueden ser un agotamiento por calor y evolucionar a un golpe de calor si no se tratan. Ante estos síntomas: bebe agua a sorbos, ve a un lugar fresco, aflójate la ropa y descansa.</p>
+
+<h2>Golpe de calor: la forma más grave</h2>
+<p>Se produce cuando el cuerpo pierde la capacidad de regular su temperatura y esta supera los 40 °C. La OCU señala entre sus síntomas la sensación de calor extremo, la piel seca y enrojecida y el pulso débil y acelerado. Es una urgencia médica: llama al 112 y, mientras llega la ayuda, lleva a la persona a la sombra y enfríala. Si los síntomas son graves, Sanidad desaconseja darle de beber.</p>
+
+<h2>Cómo prepararte para entrenar con calor</h2>
+<ol>
+<li>Empieza la sesión bien hidratado y lleva agua contigo.</li>
+<li>Baja la intensidad los primeros días de calor: el cuerpo tarda en adaptarse.</li>
+<li>En sesiones largas, valora una bebida con sodio (te lo explicamos en <a href="bebidas-isotonicas-o-agua-cuando-tomarlas.html">isotónicas o agua</a>).</li>
+<li>Pésate antes y después para saber cuánto líquido has perdido (más en <a href="hidratacion-ejercicio-cuanta-agua-beber.html">hidratación y ejercicio</a>).</li>
+</ol>
+""",
+ fuentes=[("La Moncloa / Ministerio de Sanidad. ¿Cómo prevenir los efectos de las altas temperaturas sobre la salud?","https://www.lamoncloa.gob.es/serviciosdeprensa/notasprensa/sanidad14/paginas/2023/150623-medidas-proteccion-altas-temperaturas.aspx"),
+  ("Ministerio de Sanidad. Folleto calor (calambres y agotamiento)","https://www.mscbs.gob.es/ciudadanos/saludAmbLaboral/planAltasTemp/2019/docs/folletoCalorTrabajadores.pdf"),
+  ("OCU. Golpe de calor","https://www.ocu.org/salud/enfermedades/consejos/golpe-de-calor"),
+  ("Science Media Centre España. Qué es un golpe de calor","https://sciencemediacentre.es/que-es-un-golpe-de-calor-cuales-son-los-sintomas-y-como-actuar")])
+
+art(slug="recetas-con-sardinas-en-lata", cat="Recetas", img="sardinas",
+ title="3 recetas con sardinas en lata: pescado azul barato y fácil",
+ desc="Tosta de sardinas, ensalada de patata con sardinas y pasta integral con sardinas en tomate. Recetas con pescado azul y su información nutricional.",
+ mins=6,
+ faq=[("¿Las sardinas en lata son igual de sanas que las frescas?","Son pescado azul igualmente y una forma práctica de comerlo. Para reducir la grasa del aceite, escúrrelas bien."),
+      ("¿Cuántas raciones de pescado azul hay que comer?","La AESAN propone 3 o más raciones de pescado a la semana, priorizando el pescado azul, como la sardina.")],
+ body=f"""
+<p class="entradilla">Las sardinas son uno de los pescados azules más baratos y en lata duran meses en la despensa. Aquí tienes tres recetas para sacarles partido, con su tabla nutricional.</p>
+<nav class="indice-recetas" aria-label="Recetas"><p><strong>Las 3 recetas:</strong></p><ol>{''.join(f'<li><a href="#{r["id"]}">{E(r["t"])}</a></li>' for r in SAR)}</ol></nav>
+{''.join(receta(r) for r in SAR)}
+{NOTA_N}
+<p>¿Prefieres sardinas frescas a la brasa? Asegúrate de cocinarlas bien: lee <a href="anisakis-como-evitarlo-en-casa.html">cómo evitar el anisakis</a>.</p>
+{APP_FOTO}
+""",
+ fuentes=[("USDA FoodData Central, SR Legacy","https://fdc.nal.usda.gov/"),("OCU. Nuevas recomendaciones dietéticas de la AESAN","https://www.ocu.org/alimentacion/comer-bien/noticias/recomendaciones-dieteticas-aesan")])
+
+art(slug="anisakis-como-evitarlo-en-casa", cat="Recetas", img="anisakis",
+ title="Anisakis: cómo evitarlo en casa (boquerones, sushi y pescado crudo)",
+ desc="Qué pescados hay que congelar, a qué temperatura y durante cuánto tiempo para evitar el anisakis, según la AESAN. Y cuándo no hace falta congelar.",
+ mins=5,
+ faq=[("¿Cuánto tiempo hay que congelar el pescado para el anisakis?","En casa, la recomendación es congelar a -20 °C o menos durante al menos 5 días. Esta temperatura solo se alcanza en congeladores de tres estrellas o más."),
+      ("¿Hay que congelar el pescado que voy a cocinar?","No. Si el pescado alcanza 60 °C en el centro durante al menos un minuto, el anisakis se inactiva."),
+      ("¿Los boquerones en vinagre caseros son seguros?","Solo si el pescado se ha congelado antes correctamente. El vinagre no mata el parásito.")],
+ body=f"""
+<p class="entradilla">El anisakis es un parásito que puede estar en el pescado. Se controla fácilmente si sabes qué platos necesitan congelación previa y cuáles no.</p>
+<div class="datos3">
+<div><strong>-20 °C</strong><span>o menos para congelar el pescado en casa</span></div>
+<div><strong>5 días</strong><span>en el congelador como mínimo</span></div>
+<div><strong>60 °C</strong><span>en el centro, al menos 1 minuto, si lo cocinas</span></div>
+</div>
+
+<h2>Qué platos hay que congelar antes</h2>
+<p>La AESAN indica que, cuando se preparan en casa, hay que congelar antes estos platos:</p>
+<ul>
+<li>Boquerones en vinagre y otros pescados en escabeche.</li>
+<li>Sushi, sashimi, carpaccios y otros platos de pescado crudo.</li>
+<li>Ceviches y pescados marinados.</li>
+<li>Cefalópodos para tomar crudos, escabechados o en salazón.</li>
+</ul>
+<p>Si compras estos productos ya hechos, la congelación la ha hecho el fabricante.</p>
+{fig("an-sushi","Rollos de sushi de salmón en un plato")}
+
+<h2>Cómo congelar en casa</h2>
+<p>Tu congelador debe llegar a -20 °C o menos y el pescado tiene que estar congelado al menos cinco días. Esa temperatura solo se alcanza en congeladores de tres estrellas (***) o más. Si el tuyo tiene menos, compra el pescado ya congelado.</p>
+<p>En los boquerones en vinagre puedes congelar antes o después del marinado.</p>
+
+<h2>Cuándo no hace falta congelar</h2>
+<p>Si vas a cocinar el pescado frito, asado o guisado no necesitas congelarlo: a partir de 60 °C en el centro del pescado durante al menos un minuto, el anisakis se inactiva. Como orientación, una pieza de unos 2,5 cm de grosor necesita unos 10 minutos en total, dándole la vuelta a los 5.</p>
+<p>Tampoco es necesario con ostras, mejillones, almejas, coquinas y demás moluscos bivalvos, según la AESAN.</p>
+{fig("an-hielo","Pescado fresco sobre hielo")}
+
+<h2>Errores frecuentes</h2>
+<ul>
+<li><strong>Pensar que el vinagre o el limón lo matan:</strong> no lo hacen, por eso los boquerones y el ceviche necesitan congelación.</li>
+<li><strong>Congelar solo uno o dos días en casa:</strong> no basta en un congelador doméstico.</li>
+<li><strong>Sardinas a la brasa poco hechas y sin limpiar:</strong> la OCU recuerda que muchos casos en España se deben a boquerones en vinagre y a sardinas a la brasa sin destripar y poco hechas.</li>
+</ul>
+<div class="aviso"><p><strong>Alergia al anisakis:</strong> algunas personas reaccionan incluso a las larvas muertas. Si te han diagnosticado alergia, sigue las indicaciones de tu alergólogo.</p></div>
+""",
+ fuentes=[("AESAN. Campaña anisakis","https://www.aesan.gob.es/en/actualidad/campanyas-seguridad-alimentaria/anisakis"),
+  ("AESAN. Cartel anisakis (PDF)","https://www.aesan.gob.es/dam/jcr:47899c2e-2149-417a-a53d-7fa90e9c0ae6/cartel_anisakis.pdf"),
+  ("Ministerio de Consumo. Anisakis","https://www.dsca.gob.es/es/consumo/notas-informativas/recomendaciones-alimentarias/anisakis"),
+  ("OCU. Anisakis, ¿cuándo es necesario congelar el pescado?","https://www.ocu.org/alimentacion/seguridad-alimentaria/consejos/congelacion-anisakis-pescado"),
+  ("OCU. Anisakis en 10 respuestas","https://www.ocu.org/alimentacion/seguridad-alimentaria/informe/anisakis"),
+  ("Madrid Salud. Anisakis (folleto)","https://www.madrid.es/UnidadesDescentralizadas/Salud/Publicaciones%20Propias%20Madrid%20salud/Publicaciones%20Propias%20ISP%20e%20IA/Folletos%20ISP/anisakisok.pdf"),
+  ("Consumer. Anisakis: en la prevención está la clave","https://www.consumer.es/?p=82831")])
+A[:] = A[-8:] + A[:-8]
+
 # ================================================================ PLANTILLAS
 FONTS = '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">'
 def head(title, desc, canon, img, tipo, extra):
@@ -724,7 +1050,7 @@ for a in A:
          "publisher": {"@type": "Organization", "name": "Pombo AI", "logo": {"@type": "ImageObject", "url": DOM + "/assets/pombo-icon.png"}}},
         {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": DOM + "/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": DOM + "/blog/"}, {"@type": "ListItem", "position": 3, "name": a["title"], "item": url}]},
         {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": r}} for q, r in a["faq"]]}]}
-    recs = {"recetas-de-bacalao-faciles-y-saludables":BAC,"recetas-saludables-para-adelgazar-sobrepeso":ADE,"recetas-para-ganar-masa-muscular-proteina":MUS,"batidos-de-proteinas-caseros":BAT,"desayunos-saludables-con-proteina":DES}.get(a["slug"],[])
+    recs = {"recetas-de-bacalao-faciles-y-saludables":BAC,"recetas-saludables-para-adelgazar-sobrepeso":ADE,"recetas-para-ganar-masa-muscular-proteina":MUS,"batidos-de-proteinas-caseros":BAT,"desayunos-saludables-con-proteina":DES,"recetas-con-sardinas-en-lata":SAR,"recetas-de-merluza-faciles":MER,"recetas-de-salmon-faciles":SAL,"recetas-con-atun-en-lata":ATU}.get(a["slug"],[])
     for r in recs:
         n = nutr(r["ing"], r["rac"])
         ld["@graph"].append({"@type": "Recipe", "name": r["t"], "image": f"{DOM}/assets/blog/{r['img']}.jpg", "author": {"@type": "Organization", "name": AUTOR},
@@ -794,6 +1120,6 @@ for a in A:
 sm = sm.replace("</urlset>", urls + "</urlset>")
 open(ROOT + "/sitemap.xml", "w").write(sm)
 
-for x in (ADE + MUS + BAC + BAT + DES):
+for x in (SAR + MER + SAL + ATU):
     n = nutr(x["ing"], x["rac"]); print(f'{x["t"][:42]:44} {n[0]:5.0f} kcal P{n[1]:4.0f} H{n[2]:4.0f} G{n[3]:4.0f} F{n[4]:4.0f}', sellos(n))
 print(len(A), "artículos")
