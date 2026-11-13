@@ -514,3 +514,29 @@ footer { border-top: 1px solid var(--linha); padding-block: var(--e9) var(--e6);
 .refe-item p { color: var(--tinta-2); font-size: .93rem; }
 @media (max-width: 1060px) { .refe-grade { grid-template-columns: repeat(2, 1fr); row-gap: var(--e8); } }
 @media (max-width: 560px) { .refe-grade { grid-template-columns: 1fr; } .refe-item .aparelho { max-width: 260px; } }
+/* Refeições: molduras maiores, 2 por linha, com foto de prato */
+.refe-grade { grid-template-columns: repeat(2, 1fr); gap: var(--e8) var(--e7); }
+.refe-item { grid-template-columns: auto 1fr; align-items: center; justify-items: stretch; gap: var(--e6); background: #fff; border: 1px solid var(--linha); border-radius: 28px; padding: var(--e6); }
+.refe-item .aparelho { max-width: none; width: 260px; border-width: 10px; border-radius: 40px; }
+.refe-item .ap-print img { border-radius: 30px; image-rendering: auto; }
+.refe-item figcaption { max-width: none; }
+.refe-prato { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 18px; margin-bottom: var(--e5); }
+.refe-item h3 { font-size: 1.25rem; }
+@media (max-width: 1060px) {
+  .refe-grade { grid-template-columns: 1fr; max-width: 680px; margin-inline: auto; }
+}
+@media (max-width: 620px) {
+  .refe-item { grid-template-columns: 1fr; justify-items: center; padding: var(--e5); }
+  .refe-item .aparelho { width: min(280px, 100%); }
+  .refe-item figcaption { width: 100%; }
+}
+/* Refeições v3: foto do prato em faixa, celular sobreposto, texto embaixo */
+.refe-item { grid-template-columns: 1fr; justify-items: center; align-items: start; gap: 0; padding: 0 0 var(--e7); overflow: hidden; }
+.refe-prato { width: 100%; height: auto; aspect-ratio: 16 / 9; border-radius: 0; margin: 0; }
+.refe-item .aparelho { width: 290px; margin-top: -150px; position: relative; z-index: 1; }
+.refe-item figcaption { padding: var(--e6) var(--e7) 0; width: 100%; }
+@media (max-width: 620px) {
+  .refe-item { padding: 0 0 var(--e6); }
+  .refe-item .aparelho { width: min(270px, 80%); margin-top: -110px; }
+  .refe-item figcaption { padding: var(--e5) var(--e5) 0; }
+}
