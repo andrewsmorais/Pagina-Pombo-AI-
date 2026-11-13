@@ -459,3 +459,23 @@ footer { border-top: 1px solid var(--linha); padding-block: var(--e9) var(--e6);
 .banco-anel svg { display: block; }
 .banco-numeros { gap: var(--e5) var(--e7); }
 .banco-numeros { gap: var(--e4) var(--e6); }
+
+/* Seção do jejum (página inicial) */
+.jejum-grade { display: grid; grid-template-columns: 1fr auto; gap: var(--e9); align-items: center; }
+.jejum .antetitulo { font-size: .8rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--roxo); margin-bottom: var(--e3); }
+.jejum-texto h2 { text-align: left; margin: 0; font-size: clamp(2rem, 4.2vw, 3rem); line-height: 1.1; }
+.jejum-texto > p { margin-top: var(--e5); color: var(--tinta-2); font-size: 1.05rem; max-width: 46ch; }
+.jejum-lista { list-style: none; margin-top: var(--e6); display: grid; gap: var(--e4); }
+.jejum-lista li { display: grid; gap: 2px; padding-left: var(--e5); border-left: 3px solid var(--verde-claro); }
+.jejum-lista strong { font-weight: 700; }
+.jejum-lista span { color: var(--tinta-2); font-size: .95rem; }
+.ap-print { padding: 0; max-width: 300px; background: #15181d; place-items: stretch; }
+.ap-print::before { z-index: 2; }
+.ap-print img { width: 100%; height: 100%; object-fit: cover; object-position: top; border-radius: 31px; }
+@media (max-width: 960px) {
+  .jejum-grade { grid-template-columns: 1fr; gap: var(--e7); justify-items: center; }
+  .jejum-texto { text-align: center; }
+  .jejum-texto h2 { text-align: center; }
+  .jejum-texto > p { margin-inline: auto; }
+  .jejum-lista { text-align: left; max-width: 420px; margin-inline: auto; }
+}
