@@ -540,3 +540,9 @@ footer { border-top: 1px solid var(--linha); padding-block: var(--e9) var(--e6);
   .refe-item .aparelho { width: min(270px, 80%); margin-top: -110px; }
   .refe-item figcaption { padding: var(--e5) var(--e5) 0; }
 }
+.jejum-nota { margin-top: var(--e5); font-size: .82rem; color: var(--tinta-2); max-width: 52ch; }
+/* Refeições: celular mais baixo para mostrar mais a foto do prato */
+.refe-prato { aspect-ratio: 16 / 10; }
+.refe-item .aparelho { margin-top: -90px; }
+@media (max-width: 620px) { .refe-item .aparelho { margin-top: -60px; } }
+.jejum-texto > p.jejum-nota { font-size: .82rem; margin-top: var(--e5); }
